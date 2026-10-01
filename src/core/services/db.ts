@@ -238,7 +238,35 @@ export class CoreDbProvider {
         return asyncInstance(async () => {
             await CorePlatform.ready();
 
-            return SQLite.create({ name, location: 'default' });
+            const sqliteDB = await SQLite.create({ name, location: 'default' }) as any;
+
+            // If the DB is empty (no pages yet) set the page size before creating tables.
+            try {
+                const res = await sqliteDB.executeSql('PRAGMA page_count;');
+
+                let pageCount = 0;
+
+                if (res && res.rows && typeof res.rows.item === 'function') {
+                    const it = res.rows.item(0);
+                    pageCount = it ? (it.page_count ?? it['page_count']) : 0;
+                } else if (Array.isArray(res) && res[0] && res[0].rows && typeof res[0].rows.item === 'function') {
+                    const it = res[0].rows.item(0);
+                    pageCount = it ? (it.page_count ?? it['page_count']) : 0;
+                } else if (Array.isArray(res) && res.length && Array.isArray(res[0]) && res[0].length) {
+                    pageCount = parseInt(String(res[0][0])) || 0;
+                }
+
+                if (!pageCount) {
+                    // Set page size to 16KB for new databases to comply with Play guidelines.
+                    await sqliteDB.executeSql('PRAGMA page_size = 16384;');
+                }
+            } catch (error) {
+                // Do not break DB creation if PRAGMA checks fail. Log for debugging.
+                // eslint-disable-next-line no-console
+                console.warn('Could not set PRAGMA page_size on DB creation', error);
+            }
+
+            return sqliteDB;
         }, {});
     }
 
