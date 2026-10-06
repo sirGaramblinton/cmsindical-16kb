@@ -1,13 +1,14 @@
 {
-    "app_id": "com.moodle.moodlemobile",
-    "appname": "Moodle Mobile",
-    "versioncode": 52100,
-    "versionname": "5.2.1",
+    "app_id": "com.cmsindical.app",
+    "appname": "CMSindical",
+    "versioncode": 51000,
+    "versionname": "5.1.0",
     "cache_update_frequency_usually": 420000,
     "cache_update_frequency_often": 1200000,
     "cache_update_frequency_sometimes": 3600000,
     "cache_update_frequency_rarely": 43200000,
-    "default_lang": "en",
+    "default_lang": "es",
+    "forceLanguage": true,
     "languages": {
         "af": "Afrikaans",
         "ar": "العربية",
@@ -59,7 +60,7 @@
         "sr-lt": "Srpski",
         "sv": "Svenska",
         "szl": "Ślōnski",
-        "tg": "Тоҷикӣ",
+        "tg": "Тоҷики",
         "tr": "Türkçe",
         "uk": "Українська",
         "uz": "O'zbekcha",
@@ -72,12 +73,12 @@
         "student": {
             "url": "https://school.moodledemo.net",
             "username": "student",
-            "password": "moodle26"
+            "password": "moodle25"
         },
         "teacher": {
             "url": "https://school.moodledemo.net",
             "username": "teacher",
-            "password": "moodle26"
+            "password": "moodle25"
         }
     },
     "defaultZoomLevel": "none",
@@ -86,21 +87,31 @@
         "medium": 110,
         "high": 120
     },
-    "customurlscheme": "moodlemobile",
-    "sites": [],
-    "multisitesdisplay": "",
+    "customurlscheme": "cmsindical",
+    "sites": [
+        {
+            "name": "Portal CMSindical",
+            "url": "https://www.portal3i.mx/7725-cmsindicato",
+            "alias": "CMSindical",
+            "city": "México",
+            "countrycode": "MX",
+            "wsfacialrecognitiontkn": "6fa5f3551b230c84f99578121a74f100"
+        }
+    ],
+    "multisitesdisplay": "list",
     "sitefindersettings": {},
-    "onlyallowlistedsites": false,
-    "forcedefaultlanguage": false,
+    "onlyallowlistedsites": true,
+    "forcedefaultlanguage": true,
     "privacypolicy": "https://moodle.net/moodle-app-privacy/",
     "notificoncolor": "#f98012",
     "enableanalytics": false,
+    "enableonboarding": true,
     "forceColorScheme": "",
     "forceLoginLogo": false,
     "showTopLogo": "hidden",
     "ioswebviewscheme": "moodleappfs",
     "appstores": {
-        "android": "com.moodle.moodlemobile",
+        "android": "com.cmsindical.app",
         "ios": "id633359593"
     },
     "wsrequestqueuelimit": 10,
@@ -135,5 +146,9 @@
         }
     },
     "clearIABSessionWhenAutoLogin": "android",
-    "collapsibleItemsExpanded": false
+    "collapsibleItemsExpanded": false,
+    "httptimeout": 30000,
+    "ajaxTimeoutDelay": 30000,
+    "networkTimeout": 30000,
+    "disabledFeatures": "NoDelegate_CoreCourseDownload,NoDelegate_CoreCoursesDownload"
 }
