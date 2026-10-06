@@ -58,9 +58,8 @@ export class CoreDbProvider {
     printHistory(format = ':dbname | :sql | Duration: :duration | Result: :result'): void {
         const substituteParams = ({ sql, params, duration, error, dbName }: CoreDbQueryLog) => format
             .replace(':dbname', dbName)
-            .replace(':sql', Object
-                .values(params ?? [])
-                .reduce((sql: string, param: string) => sql.replace('?', param) as string, sql) as string)
+            .replace(':sql', (Object.values(params ?? []) as unknown[])
+                .reduce((prev: string, param: unknown) => prev.replace('?', String(param)), sql) as string)
             .replace(':duration', `${Math.round(duration).toString().padStart(4, '0')}ms`)
             .replace(':result', error?.message ?? 'Success');
 
@@ -215,7 +214,16 @@ export class CoreDbProvider {
                 const spies = this.getDatabaseSpies(name, db);
 
                 db = new Proxy(db, {
-                    get: (target, property, receiver) => spies[property] ?? Reflect.get(target, property, receiver),
+                    get: (target, property, receiver) => {
+                        const key = typeof property === 'string' ? property : String(property);
+                        const spy = (spies as Partial<Record<string, unknown>>)[key] as unknown;
+
+                        if (spy !== undefined) {
+                            return spy;
+                        }
+
+                        return Reflect.get(target, property, receiver);
+                    },
                 }) as unknown as SQLiteObject;
             }
 
@@ -238,7 +246,38 @@ export class CoreDbProvider {
         return asyncInstance(async () => {
             await CorePlatform.ready();
 
-            return SQLite.create({ name, location: 'default' });
+            const db = await SQLite.create({ name, location: 'default' });
+
+            // If database is new (no pages yet) set a larger page size before any DDL is executed.
+            // Some SQLite adapters return different column names for PRAGMA results, so try to handle common cases.
+            try {
+                const res = await db.executeSql('PRAGMA page_count');
+                let pageCount = 0;
+                if (res && res.rows && res.rows.length) {
+                    const firstRow = res.rows.item(0) as Record<string, unknown>;
+                    // Try common keys first, then fallback to the first value.
+                    pageCount = (firstRow.page_count as number) ?? (firstRow['page_count()'] as number) ?? Number(Object.values(firstRow)[0]);
+                    if (Number.isNaN(pageCount)) {
+                        pageCount = 0;
+                    }
+                }
+
+                if (pageCount === 0) {
+                    try {
+                        await db.executeSql('PRAGMA page_size = 16384');
+                    } catch (e) {
+                        // Some environments might not allow changing page_size; ignore errors and continue.
+                        // eslint-disable-next-line no-console
+                        console.warn('Could not set PRAGMA page_size:', e);
+                    }
+                }
+            } catch (e) {
+                // If PRAGMA queries fail for any reason, continue without blocking DB creation.
+                // eslint-disable-next-line no-console
+                console.warn('PRAGMA page_count check failed:', e);
+            }
+
+            return db;
         }, {});
     }
 
@@ -292,16 +331,17 @@ export class CoreDbProvider {
                     });
 
                     return result;
-                } catch (error) {
+                } catch (error: unknown) {
+                    const err = error instanceof Error ? error : new Error(String(error));
                     CoreDB.logQuery({
                         params,
-                        error,
+                        error: err,
                         sql: statement,
                         duration:  performance.now() - start,
                         dbName,
                     });
 
-                    throw error;
+                    throw err;
                 }
             },
             async sqlBatch(statements) {
@@ -320,15 +360,16 @@ export class CoreDbProvider {
                     });
 
                     return result;
-                } catch (error) {
+                } catch (error: unknown) {
+                    const err = error instanceof Error ? error : new Error(String(error));
                     CoreDB.logQuery({
                         sql,
-                        error,
+                        error: err,
                         duration: performance.now() - start,
                         dbName,
                     });
 
-                    throw error;
+                    throw err;
                 }
             },
         };
