@@ -21,6 +21,8 @@ import { CoreRedirectPayload } from '@services/navigator';
 import { CoreSitesFactory } from '@services/sites-factory';
 import { CoreSharedModule } from '@/core/shared.module';
 import { CoreLoginIdentityProviderComponent } from '../identity-provider/identity-provider';
+import { ModalController } from '@ionic/angular';
+import { PreenrollModalComponent } from '../preenroll-modal/preenroll-modal.component';
 
 @Component({
     selector: 'core-login-methods',
@@ -29,9 +31,20 @@ import { CoreLoginIdentityProviderComponent } from '../identity-provider/identit
     imports: [
         CoreSharedModule,
         CoreLoginIdentityProviderComponent,
+        PreenrollModalComponent,
     ],
 })
 export class CoreLoginMethodsComponent implements OnInit {
+    constructor(private modalController: ModalController) {}
+
+    async openPreenrollModal(mode?: 'recover'): Promise<void> {
+        const modal = await this.modalController.create({
+            component: PreenrollModalComponent,
+            cssClass: 'core-modal core-bootstrap-modal',
+            componentProps: { startInRecover: mode === 'recover' },
+        });
+        await modal.present();
+    }
 
     @Input() siteUrl = '';
     @Input() siteConfig?: CoreSitePublicConfigResponse;

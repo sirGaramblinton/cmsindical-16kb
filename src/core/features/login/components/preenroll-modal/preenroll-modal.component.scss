@@ -1,0 +1,97 @@
+// Botón primario personalizado
+.btn-primary-custom {
+  color: #fff !important;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+// Botón secundario personalizado
+.btn-secondary-custom {
+    --background: white;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+// Botón secondary en negro
+ion-button[color="secondary"] {
+  color: #000 !important;
+  border-color: #000 !important;
+}
+
+// Botón primary con texto blanco
+ion-button[color="primary"] {
+  color: #fff !important;
+}
+
+// Label flotante para evitar traslape con el cursor
+ion-label[position="floating"] {
+  z-index: 2;
+  background: #fff;
+  padding-right: 8px;
+}
+
+ion-input {
+  z-index: 1;
+}
+.preenroll-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+.validation-msg {
+  color: #e74c3c;
+  margin: 8px 0 0 0;
+  font-size: 0.95em;
+  text-align: center;
+}
+
+.response-msg {
+  color: #222;
+  font-size: 1.1em;
+  text-align: center;
+  padding: 24px 0 16px 0;
+}
+
+
+ion-content {
+  --background: #fff;
+}
+
+ion-item {
+  margin-bottom: 16px;
+}
+
+// Ajuste para que el contenido del modal sea visible y desplazable si es necesario
+:host.core-modal,
+:host.core-bootstrap-modal {
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  overflow: visible;
+}
+
+
+.preenroll-modal-content {
+  background: #fff;
+  padding: 16px 16px 24px 16px;
+  border-radius: 0 0 16px 16px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.info-preenroll {
+    background-color: #ffffd4;
+    font-style: italic;
+    padding: 1em;
+    border-radius: 8px;
+}
+.info-preenroll i {
+    color: #b71c1c;
+}
+.info-preenroll span {
+    font-size: small;
+}

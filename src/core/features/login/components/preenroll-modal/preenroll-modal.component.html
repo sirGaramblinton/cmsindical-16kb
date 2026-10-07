@@ -1,0 +1,96 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h1>
+        @if (modalState === 'form' || modalState === 'processing' || modalState === 'success' || modalState === 'exists') {
+          Pre-registro de acceso
+        } @else if (modalState === 'recover' || modalState === 'recover-processing' || modalState === 'recover-success') {
+          Recuperación de contraseña
+        }
+      </h1>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="dismiss()" aria-label="Cerrar">
+        <ion-icon slot="icon-only" name="fas-xmark" aria-hidden="true" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div class="preenroll-modal-content">
+  @if (modalState === 'form') {
+    <form (ngSubmit)="submit()">
+      <div class="mb-3 info-preenroll"><i class="far fa-bell"></i>
+        <span>Recuerda validar tu información antes de enviar el formulario.</span>
+      </div>
+      <ion-item>
+        <ion-label position="floating" style="z-index:2; background: #fff; padding-right: 8px;">Nombres</ion-label>
+        <ion-input [(ngModel)]="nombres" name="nombres" required maxlength="100" style="z-index:1;" />
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" style="z-index:2; background: #fff; padding-right: 8px;">Apellidos</ion-label>
+        <ion-input [(ngModel)]="apellidos" name="apellidos" required maxlength="100" style="z-index:1;" />
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" style="z-index:2; background: #fff; padding-right: 8px;">RFC</ion-label>
+        <ion-input [(ngModel)]="rfc" name="rfc" required maxlength="13" minlength="13" style="z-index:1;" />
+      </ion-item>
+      @if (validationMsg) {
+        <div class="validation-msg">{{ validationMsg }}</div>
+      }
+      <ion-button expand="block" type="submit" [disabled]="isSubmitting" class="btn-primary-custom">Enviar</ion-button>
+    </form>
+  }
+  @if (modalState === 'processing') {
+    <div class="ion-text-center ion-padding">
+      <ion-spinner name="crescent" />
+      <span>Procesando...</span>
+    </div>
+  }
+  @if (modalState === 'success') {
+    <div class="ion-text-center ion-padding">
+      <ion-icon name="{{ modalIcon }}" style="color: green; font-size: 3em;" />
+      <div class="response-msg">{{ modalMsg }}</div>
+    </div>
+  }
+  @if (modalState === 'exists') {
+    <div class="ion-text-center ion-padding">
+      <ion-icon name="{{ modalIcon }}" style="color: #2196f3; font-size: 3em;" />
+      <div class="response-msg">{{ modalMsg }}</div>
+    </div>
+    <div class="preenroll-modal-actions">
+      <ion-button expand="block" (click)="openRecoverForm()" class="btn-secondary-custom">Recuperar contraseña</ion-button>
+      <ion-button expand="block" (click)="dismiss()" class="btn-primary-custom">Iniciar sesión</ion-button>
+    </div>
+  }
+  @if (modalState === 'recover') {
+    <form (ngSubmit)="submitRecover($event)">
+      <div class="mb-3 info-preenroll"><i class="far fa-bell"></i>
+        <span>Ingresa tu RFC para recibir tu usuario y contraseña en el número telefónico registrado.</span>
+      </div>
+      <ion-item>
+        <ion-label position="floating">RFC</ion-label>
+        <ion-input [(ngModel)]="recoverRfc" name="recoverRfc" required maxlength="13" minlength="13" />
+      </ion-item>
+      @if (recoverMsg) {
+        <div class="validation-msg">{{ recoverMsg }}</div>
+      }
+      <div class="preenroll-modal-actions">
+        <ion-button expand="block" class="btn-secondary-custom" type="button" (click)="dismiss()">Cancelar</ion-button>
+        <ion-button expand="block" class="btn-primary-custom" type="submit" [disabled]="isRecovering">Enviar</ion-button>
+      </div>
+    </form>
+  }
+  @if (modalState === 'recover-processing') {
+    <div class="ion-text-center ion-padding">
+      <ion-spinner name="crescent" />
+      <span>Procesando...</span>
+    </div>
+  }
+  @if (modalState === 'recover-success') {
+    <div class="ion-text-center ion-padding">
+      <ion-icon name="{{ modalIcon }}" style="color: green; font-size: 3em;" />
+      <div class="response-msg">{{ modalMsg }}</div>
+    </div>
+  }
+</div>
