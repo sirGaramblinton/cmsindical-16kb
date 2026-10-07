@@ -1121,6 +1121,14 @@ export class CoreSitesProvider {
         config?: CoreSiteConfig,
         oauthId?: number,
     ): Promise<void> {
+        // Debug log to trace site creation from runtime JS console.
+        try {
+            // tslint:disable-next-line:no-console
+            console.log('[CoreSites] addSite called for id:', id, 'siteUrl:', siteUrl);
+        } catch {
+            // ignore
+        }
+
         const promises: Promise<unknown>[] = [];
         const site: SiteDBEntry = {
             id,
@@ -1706,9 +1714,23 @@ export class CoreSitesProvider {
      * @param siteId ID of the site the user is accessing.
      */
     async login(siteId: string): Promise<void> {
+        try {
+            // tslint:disable-next-line:no-console
+            console.log('[CoreSites] login() called for siteId:', siteId);
+        } catch {
+            // ignore
+        }
+
         await CoreConfig.set(CORE_SITE_CURRENT_SITE_ID_CONFIG, siteId);
 
         CoreEvents.trigger(CoreEvents.LOGIN, { siteId }, siteId);
+
+        try {
+            // tslint:disable-next-line:no-console
+            console.log('[CoreSites] LOGIN event triggered for siteId:', siteId);
+        } catch {
+            // ignore
+        }
     }
 
     /**
@@ -2367,12 +2389,25 @@ export class CoreSitesProvider {
      * @returns Stored tokens.
      */
     protected async getTokensFromSecureStorage(siteId: string): Promise<{ token: string; privateToken?: string }> {
-        const result = await CoreNative.plugin('secureStorage')?.get(['token', 'privateToken'], siteId);
+        try {
+            this.logger.debug(`getTokensFromSecureStorage: requesting tokens for site ${siteId}`);
+            const plugin = CoreNative.plugin('secureStorage');
+            if (!plugin) {
+                this.logger.warn('getTokensFromSecureStorage: secureStorage plugin not available');
+                return { token: '', privateToken: undefined };
+            }
 
-        return {
-            token: result?.token ?? '',
-            privateToken: result?.privateToken ?? undefined,
-        };
+            const result = await plugin.get(['token', 'privateToken'], siteId);
+            this.logger.debug('getTokensFromSecureStorage: result', result);
+
+            return {
+                token: result?.token ?? '',
+                privateToken: result?.privateToken ?? undefined,
+            };
+        } catch (err) {
+            this.logger.error(`getTokensFromSecureStorage: error retrieving tokens for site ${siteId}`, err);
+            return { token: '', privateToken: undefined };
+        }
     }
 
     /**
@@ -2387,10 +2422,23 @@ export class CoreSitesProvider {
         token: string,
         privateToken?: string,
     ): Promise<void> {
-        await CoreNative.plugin('secureStorage')?.store({
-            token: token,
-            privateToken: privateToken ?? '',
-        }, siteId);
+        try {
+            this.logger.debug(`storeTokensInSecureStorage: storing tokens for site ${siteId}`);
+            const plugin = CoreNative.plugin('secureStorage');
+            if (!plugin) {
+                this.logger.warn('storeTokensInSecureStorage: secureStorage plugin not available');
+                return;
+            }
+
+            await plugin.store({
+                token: token,
+                privateToken: privateToken ?? '',
+            }, siteId);
+            this.logger.debug('storeTokensInSecureStorage: stored tokens successfully');
+        } catch (err) {
+            this.logger.error(`storeTokensInSecureStorage: error storing tokens for site ${siteId}`, err);
+            throw err;
+        }
     }
 
     /**

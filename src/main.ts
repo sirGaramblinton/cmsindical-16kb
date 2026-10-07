@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import { enableProdMode, importProvidersFrom, provideAppInitializer } from '@angular/core';
+import { SecureStorageMock } from '@features/emulator/classes/SecureStorage';
 
 import { CoreConstants } from './core/constants';
 import { AppComponent } from './app/app.component';
@@ -34,6 +35,22 @@ import { MoodleTranslateLoader } from '@classes/lang-loader';
 
 if (CoreConstants.BUILD.isProduction) {
     enableProdMode();
+}
+
+// Ensure a SecureStorage mock is available as early as possible so any early callers
+// to the native plugin get a valid instance instead of causing "Invalid action".
+try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const win = (window as any);
+    win.cordova = win.cordova || {};
+    win.cordova.MoodleApp = win.cordova.MoodleApp || {};
+    if (!win.cordova.MoodleApp.secureStorage) {
+        win.cordova.MoodleApp.secureStorage = new SecureStorageMock();
+        // eslint-disable-next-line no-console
+        console.warn('SecureStorageMock registered at startup as fallback.');
+    }
+} catch {
+    // ignore errors during startup fallback registration.
 }
 
 bootstrapApplication(AppComponent, {

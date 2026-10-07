@@ -28,6 +28,7 @@ import { register } from 'swiper/element/bundle';
 import { CoreWait } from '@static/wait';
 import { CoreOpener } from '@static/opener';
 import { BackButtonPriority } from '@/core/constants';
+import { SecureStorageMock } from '@features/emulator/classes/SecureStorage';
 
 register();
 
@@ -48,6 +49,22 @@ export class AppComponent implements OnInit, AfterViewInit {
     ngOnInit(): void {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const win = <any> window;
+
+        // If the native secureStorage plugin is missing on device, register a local fallback
+        // so the app can continue to login and store tokens (not encrypted). This is a temporary
+        // workaround until the native plugin is properly installed.
+        try {
+            if (CorePlatform.isMobile()) {
+                win.cordova = win.cordova || {};
+                win.cordova.MoodleApp = win.cordova.MoodleApp || {};
+                if (!win.cordova.MoodleApp.secureStorage) {
+                    win.cordova.MoodleApp.secureStorage = new SecureStorageMock();
+                    this.logger.warn('secureStorage plugin missing — using localStorage fallback (SecureStorageMock).');
+                }
+            }
+        } catch (e) {
+            // ignore
+        }
 
         CorePlatform.resume.subscribe(() => {
             // Wait a second before setting it to false since in iOS there could be some frozen WS calls.

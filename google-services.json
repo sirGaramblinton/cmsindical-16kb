@@ -9,8 +9,8 @@
     {
       "client_info": {
         "mobilesdk_app_id": "1:111111111111:android:1111111111111111",
-        "android_client_info": {
-          "package_name": "com.moodle.moodlemobile"
+          "android_client_info": {
+          "package_name": "com.cmsindical.app"
         }
       },
       "oauth_client": [

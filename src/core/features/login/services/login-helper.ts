@@ -374,6 +374,14 @@ export class CoreLoginHelperProvider {
     async isSiteUrlAllowed(siteUrl: string, checkSiteFinder = true): Promise<boolean> {
         const sites = await this.getAvailableSites();
 
+        // Debug info for tests when running in automated environment.
+        try {
+            // eslint-disable-next-line no-console
+            console.debug('isSiteUrlAllowed called:', { siteUrl, sitesLength: sites?.length, checkSiteFinder, config: { multisitesdisplay: CoreConstants.CONFIG.multisitesdisplay, onlyallowlistedsites: CoreConstants.CONFIG.onlyallowlistedsites } });
+        } catch (e) {
+            // ignore
+        }
+
         if (sites.length) {
             const demoModeSite = this.getDemoModeSiteInfo();
 
@@ -935,6 +943,15 @@ export class CoreLoginHelperProvider {
      * @param password User password.
      */
     treatUserTokenError(siteUrl: string, error: CoreError, username?: string, password?: string): void {
+        // Log full error for debugging login flow interruptions.
+        try {
+            this.logger.warn('treatUserTokenError called', error);
+            // eslint-disable-next-line no-console
+            console.warn('treatUserTokenError raw error:', error);
+        } catch {
+            // ignore logging errors
+        }
+
         const errorCode = 'errorcode' in error ? error.errorcode : null;
 
         switch (errorCode) {

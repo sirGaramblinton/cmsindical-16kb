@@ -36,6 +36,7 @@ import { CorePlatform } from '@services/platform';
 import { CoreDB } from '@services/db';
 import { CoreNavigator } from '@services/navigator';
 import { CoreLoadings } from '@services/overlays/loadings';
+import { CoreLoginHelper } from '@features/login/services/login-helper';
 import { TranslatePipe } from '@ngx-translate/core';
 import { CoreIonLoadingElement } from '@classes/ion-loading';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -70,6 +71,9 @@ const DEFAULT_SERVICE_SINGLETON_MOCKS: [CoreSingletonProxy, unknown][] = [
         ready: () => Promise.resolve(),
         resume: new Subject<void>(),
         isAutomated: () => true,
+    })],
+    [CoreLoginHelper, mock({
+        isSiteUrlAllowed: () => true,
     })],
     [CoreNetwork, mock({
         isOnline: () => true,
@@ -322,8 +326,16 @@ export function mockSingleton<Service>(
     overrides: string[] | Record<string, unknown> = {},
     { forceConstructorFallback = false } = {},
 ): Service {
-    // Get the original instance (from DI or constructor).
-    const instance = getServiceInstance<Service>(singleton.injectionToken, { forceConstructorFallback }) as Service;
+    // Try to get existing singleton instance first to preserve previously set mocks.
+    let instance: Service | Record<string, unknown> | null = null;
+    try {
+        // Accessing `singleton.instance` will use the singletons injector when available.
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        instance = (singleton as any).instance as Service;
+    } catch {
+        // Fallback to resolve via injection token or constructor.
+        instance = getServiceInstance<Service>(singleton.injectionToken, { forceConstructorFallback }) as Service;
+    }
 
     // Create the mock instance.
     const mockInstance = mock(instance, overrides);
@@ -348,6 +360,33 @@ export function resetTestingEnvironment(): void {
             mockSingleton(singleton, mockInstance as Record<string, unknown>);
         }
     });
+
+    // Preload common translations used by tests to avoid missing keys in the mocked Translate.
+    try {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment
+        const enJson = require('../assets/lang/en.json');
+        const enTranslations = (enJson && enJson.default) ? enJson.default : enJson;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (Translate as any).setTranslation('en', enTranslations, true);
+
+        const esJson = require('../assets/lang/es.json');
+        const esTranslations = (esJson && esJson.default) ? esJson.default : esJson;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (Translate as any).setTranslation('es', esTranslations, true);
+
+        // Load Afrikaans minimal translations if present (some tests use 'af').
+        try {
+            // eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment
+            const afJson = require('../assets/lang/af.json');
+            const afTranslations = (afJson && afJson.default) ? afJson.default : afJson;
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (Translate as any).setTranslation('af', afTranslations, true);
+        } catch {
+            // ignore if af.json not present
+        }
+    } catch (e) {
+        // ignore translation preload errors in test environment
+    }
 }
 
 /**

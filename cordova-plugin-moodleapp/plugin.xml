@@ -9,20 +9,20 @@
         <framework src="com.android.installreferrer:installreferrer:2.2" />
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="SecureStorage">
-                <param name="android-package" value="com.moodle.moodlemobile.SecureStorage"/>
+                <param name="android-package" value="com.cmsindical.app.SecureStorage"/>
             </feature>
             <feature name="InstallReferrer">
-                <param name="android-package" value="com.moodle.moodlemobile.InstallReferrer"/>
+                <param name="android-package" value="com.cmsindical.app.InstallReferrer"/>
             </feature>
         </config-file>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Diagnostic">
-                <param name="android-package" value="com.moodle.moodlemobile.Diagnostic"/>
+                <param name="android-package" value="com.cmsindical.app.Diagnostic"/>
                 <param name="onload" value="true" />
             </feature>
             <feature name="PinchToZoom">
-                <param name="android-package" value="com.moodle.moodlemobile.PinchToZoom"/>
+                <param name="android-package" value="com.cmsindical.app.PinchToZoom"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
@@ -34,9 +34,9 @@
         <framework src="androidx.legacy:legacy-support-v4:$ANDROIDX_VERSION" />
         <framework src="androidx.appcompat:appcompat:$ANDROIDX_APPCOMPAT_VERSION" />
 
-        <source-file src="src/android/SecureStorage.java" target-dir="src/com/moodle/moodlemobile" />
-        <source-file src="src/android/InstallReferrer.java" target-dir="src/com/moodle/moodlemobile" />
-        <source-file src="src/android/PinchToZoom.java" target-dir="src/com/moodle/moodlemobile" />
+        <source-file src="src/android/SecureStorage.java" target-dir="src/com/cmsindical/app" />
+        <source-file src="src/android/InstallReferrer.java" target-dir="src/com/cmsindical/app" />
+        <source-file src="src/android/PinchToZoom.java" target-dir="src/com/cmsindical/app" />
     </platform>
 
     <platform name="ios">

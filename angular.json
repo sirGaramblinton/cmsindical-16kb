@@ -26,6 +26,7 @@
               "safe-json-parse/tuple",
               "videojs-vtt.js",
               "mp3-mediarecorder/worker",
+              "@totalpave/cordova-plugin-insets",
               "dayjs",
               "ts-md5/dist/md5"
             ],
