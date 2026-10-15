@@ -17,12 +17,19 @@
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding" (keydown)="keyDown($event)" (keyup)="keyUp($event)">
+<ion-content class="ion-padding reconnect-page" (keydown)="keyDown($event)" (keyup)="keyUp($event)">
     <core-loading [hideUntil]="!showLoading" placeholderType="imageandboxes">
         @if (site) {
             <div class="list-item-limited-width">
                 @if (!isLoggedOut) {
-                    <core-alert-card type="warning" class="core-login-reconnect-warning" [message]="'core.lostconnection' | translate" />
+                    <ion-card class="core-warning-card core-login-reconnect-warning">
+                        <ion-item>
+                            <ion-icon name="fas-triangle-exclamation" slot="start" aria-hidden="true" />
+                            <ion-label>
+                                <p>{{ 'core.lostconnection' | translate }}</p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-card>
                 }
 
                 <div class="ion-text-wrap ion-text-center core-login-info-box">
@@ -96,13 +103,38 @@
                 {{ 'core.login.loginbutton' | translate }}
             </ion-button>
 
+            <!-- Botón de Reconocimiento Facial -->
+            @if (showFacialRecognitionButton) {
+                <ion-button
+                    expand="block"
+                    fill="outline"
+                    class="btn-secondary-custom ion-text-wrap"
+                    [disabled]="facialRecognitionLoading"
+                    (click)="startFacialRecognition()">
+
+                    <ion-icon slot="start" name="scan-outline" aria-hidden="true" />
+
+                    @if (facialRecognitionLoading) {
+                        <ion-spinner size="small" />
+                        <span class="ion-margin-start">Cargando...</span>
+                    } @else if (facialRecognitionData?.haveRfRegister === '1') {
+                        Iniciar con Reconocimiento Facial
+                    } @else {
+                        Registrar Reconocimiento Facial
+                    }
+                </ion-button>
+            }
+
             <!-- Forgotten password option. -->
+            <!-- ❌ COMENTADO: Duplicado con flujo custom preenroll en login-methods.html -->
+            <!--
             @if (showForgottenPassword) {
                 <ion-button expand="block" fill="clear" class="core-login-forgotten-password core-button-as-link ion-text-wrap"
                     (click)="forgottenPassword()">
                     {{ 'core.login.forgotaccount' | translate }}
                 </ion-button>
             }
+            -->
         </form>
     }
 
@@ -119,6 +151,6 @@
     <!-- Additional Login methods -->
     @if (siteConfig) {
         <core-login-methods [site]="site" [siteConfig]="siteConfig" [siteUrl]="site.siteUrl" [redirectData]="redirectData"
-            [showLoginForm]="showLoginForm" />
+            [showLoginForm]="showLoginForm" [isReconnect]="true" />
     }
 </ng-template>

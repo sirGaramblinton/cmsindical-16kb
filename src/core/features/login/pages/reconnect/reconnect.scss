@@ -1,0 +1,68 @@
+// Estilos específicos para la página de reconexión
+.reconnect-page {
+    // Forzar estilo idéntico para botón de reconocimiento facial
+    // .btn-secondary-custom {
+    //     --background: white !important;
+    //     --color: #000 !important;
+    //     --border-color: #000 !important;
+    //     --border-style: solid !important;
+    //     --border-width: 1px !important;
+    //     --border-radius: 5px !important;
+
+    //     // Solo usar variables CSS de Ionic, NO border directo
+    //     background: white !important;
+    //     color: #000 !important;
+
+    //     // Eliminar efectos de hover/focus que puedan cambiar colores
+    //     &:hover, &:focus {
+    //         --background: white !important;
+    //         --color: #000 !important;
+    //         --border-color: #000 !important;
+    //     }
+
+    //     // Ajustes de márgenes para homologar ancho
+    //     margin-left: 8px;
+    //     margin-right: 8px;
+    //     margin-bottom: 12px;
+    // }
+
+    // Estilos para la leyenda educativa de permisos de cámara (AZUL como solicitado)
+    .camera-permission-info {
+        background: rgba(var(--ion-color-primary-rgb), 0.1);
+        border: 1px solid var(--ion-color-primary);
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+
+        .permission-icon {
+            color: var(--ion-color-primary);
+            font-size: 20px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .permission-content {
+            flex: 1;
+        }
+
+        .permission-text {
+            margin: 0 0 12px 0;
+            font-size: 14px;
+            line-height: 1.4;
+            color: var(--ion-text-color);
+
+            strong {
+                color: var(--ion-color-primary-shade);
+            }
+        }
+
+        .permission-button {
+            --color: var(--ion-color-primary);
+            --background: transparent;
+            height: 32px;
+            font-size: 13px;
+            margin: 0;
+        }
+    }
+}

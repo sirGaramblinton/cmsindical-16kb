@@ -943,16 +943,13 @@ export class CoreLoginHelperProvider {
      * @param password User password.
      */
     treatUserTokenError(siteUrl: string, error: CoreError, username?: string, password?: string): void {
-        // Log full error for debugging login flow interruptions.
-        try {
-            this.logger.warn('treatUserTokenError called', error);
-            // eslint-disable-next-line no-console
-            console.warn('treatUserTokenError raw error:', error);
-        } catch {
-            // ignore logging errors
-        }
+        this.logger.warn('treatUserTokenError called', error);
+        // eslint-disable-next-line no-console
+        console.warn('treatUserTokenError raw error:', error);
 
-        const errorCode = 'errorcode' in error ? error.errorcode : null;
+        const errorCode = typeof error === 'object' && error !== null && 'errorcode' in error
+            ? error.errorcode
+            : null;
 
         switch (errorCode) {
             case 'forcepasswordchangenotice':

@@ -2437,6 +2437,16 @@ export class CoreSitesProvider {
             this.logger.debug('storeTokensInSecureStorage: stored tokens successfully');
         } catch (err) {
             this.logger.error(`storeTokensInSecureStorage: error storing tokens for site ${siteId}`, err);
+
+            const isInvalidActionError = `${err}`.includes('Invalid action');
+            if (isInvalidActionError) {
+                this.logger.warn(
+                    'storeTokensInSecureStorage: secureStorage action unavailable, continuing without secure storage',
+                );
+
+                return;
+            }
+
             throw err;
         }
     }

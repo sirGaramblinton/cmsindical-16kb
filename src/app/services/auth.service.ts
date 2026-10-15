@@ -1,22 +1,51 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private _token?: string;
+    /**
+     * Navega a una ruta específica usando el router de Angular.
+     */
+    navigateTo(route: string | string[]) {
+        console.debug('AuthService.navigateTo ->', route);
+        this.router.navigate(Array.isArray(route) ? route : [route]);
+    }
+    private token: string | null = null;
+    private user: any = null;
 
-  setSession(token: string, user?: any): void {
-    this._token = token;
-    // minimal stub: real implementation should store session and user info
-  }
+    constructor(private router: Router) {}
 
-  isAuthenticated(): boolean {
-    return !!this._token;
-  }
+    setSession(token: string, user?: any) {
+        console.debug('AuthService.setSession -> token present?', !!token, 'user:', user);
+        this.token = token;
+        this.user = user || null;
+        localStorage.setItem('auth_token', token);
+        if (user) {
+            localStorage.setItem('auth_user', JSON.stringify(user));
+        }
+    }
 
-  navigateTo(path: string): void {
-    // minimal stub: router navigation would be implemented here
-    console.log('navigateTo', path);
-  }
+
+    getToken(): string | null {
+        return this.token || localStorage.getItem('auth_token');
+    }
+
+    getUser(): any {
+        if (this.user) return this.user;
+        const userStr = localStorage.getItem('auth_user');
+        return userStr ? JSON.parse(userStr) : null;
+    }
+
+    clearSession() {
+        console.debug('AuthService.clearSession -> clearing local session and navigating to /login');
+        this.token = null;
+        this.user = null;
+        localStorage.removeItem('auth_token');
+        localStorage.removeItem('auth_user');
+        this.router.navigate(['/login']);
+    }
+
+    isAuthenticated(): boolean {
+        return !!this.getToken();
+    }
 }
-
-export const Auth = new AuthService();

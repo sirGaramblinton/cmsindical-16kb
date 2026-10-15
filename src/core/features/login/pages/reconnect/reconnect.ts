@@ -34,6 +34,7 @@ import { ALWAYS_SHOW_LOGIN_FORM_CHANGED, FORGOTTEN_PASSWORD_FEATURE_NAME } from 
 import { CoreKeyboard } from '@static/keyboard';
 import { CoreLoadings } from '@services/overlays/loadings';
 import { CoreLoginMethodsComponent, CoreLoginMethodsCurrentLogin } from '@features/login/components/login-methods/login-methods';
+import { FacialRecognitionService, ValidateRFResponse } from '../../services/facial-recognition.service';
 import { CoreAlerts } from '@services/overlays/alerts';
 import { CoreSharedModule } from '@/core/shared.module';
 import { CoreSiteLogoComponent } from '../../../../components/site-logo/site-logo';
@@ -46,7 +47,7 @@ import { CoreLoginIdentityProviderComponent } from '../../components/identity-pr
 @Component({
     selector: 'page-core-login-reconnect',
     templateUrl: 'reconnect.html',
-    styleUrl: '../../login.scss',
+    styleUrls: ['../../login.scss', 'reconnect.scss'],
     imports: [
         CoreSharedModule,
         CoreSiteLogoComponent,
@@ -78,6 +79,11 @@ export default class CoreLoginReconnectPage implements OnInit, OnDestroy {
     redirectData?: CoreRedirectPayload;
     showLoginForm = true;
 
+    // Facial recognition vars
+    showFacialRecognitionButton = false;
+    facialRecognitionData?: ValidateRFResponse;
+    facialRecognitionLoading = false;
+
     protected viewLeft = false;
     protected eventThrown = false;
     protected loginSuccessful = false;
@@ -85,6 +91,7 @@ export default class CoreLoginReconnectPage implements OnInit, OnDestroy {
     protected alwaysShowLoginFormObserver?: CoreEventObserver;
     protected loginObserver?: CoreEventObserver;
     protected fb = inject(FormBuilder);
+    protected facialRecognitionService = inject(FacialRecognitionService);
 
     constructor() {
         const currentSite = CoreSites.getCurrentSite();
@@ -158,6 +165,13 @@ export default class CoreLoginReconnectPage implements OnInit, OnDestroy {
             this.showUserAvatar = !availableSites.length;
 
             await this.checkSiteConfig();
+
+            // Check facial recognition capabilities (if service available)
+            try {
+                await this.checkFacialRecognitionCapabilities();
+            } catch {
+                // Ignore errors from RF check to not block normal flow.
+            }
 
             this.alwaysShowLoginFormObserver = CoreEvents.on(ALWAYS_SHOW_LOGIN_FORM_CHANGED, async () => {
                 this.showLoginForm = await CoreLoginHelper.shouldShowLoginForm(this.siteConfig);
@@ -353,6 +367,224 @@ export default class CoreLoginReconnectPage implements OnInit, OnDestroy {
             this.siteConfig.launchurl,
             this.redirectData,
         );
+    }
+
+    /**
+     * Verifica las capacidades de reconocimiento facial del usuario
+     */
+    async checkFacialRecognitionCapabilities(): Promise<void> {
+        try {
+            this.facialRecognitionLoading = true;
+
+            // STEP 1: obtain email for the user
+            const userEmailResponse = await this.facialRecognitionService.getUserEmail(this.username);
+
+            const rfValidation = await this.facialRecognitionService.validateRF(userEmailResponse.email);
+            this.facialRecognitionData = rfValidation;
+            this.showFacialRecognitionButton = rfValidation.allowRf === '1';
+        } catch (error) {
+            // Don't block login in case of errors
+            console.error('Error checking facial recognition capabilities:', error);
+            this.showFacialRecognitionButton = false;
+            this.facialRecognitionData = undefined;
+        } finally {
+            this.facialRecognitionLoading = false;
+        }
+    }
+
+    /**
+     * Maneja el click del botón de reconocimiento facial
+     */
+    async startFacialRecognition(): Promise<void> {
+        // Clear password field for privacy
+        this.credForm.controls['password'].setValue('');
+
+        if (!this.facialRecognitionData) {
+            CoreAlerts.showError(Translate.instant('core.login.rf.no_data_available'));
+
+            return;
+        }
+
+        const modal = await CoreLoadings.show(Translate.instant('core.login.rf.preparing'));
+
+        try {
+            if (this.facialRecognitionData.haveRfRegister === '0') {
+                await this.handleFacialRecognitionRegistration();
+            } else {
+                await this.handleFacialRecognitionLogin();
+            }
+        } catch (error) {
+            console.debug('[RF] startFacialRecognition error:', error);
+            CoreAlerts.showError(Translate.instant('core.login.rf.error_generic_simple'));
+            throw error;
+        } finally {
+            modal.dismiss();
+        }
+    }
+
+    /**
+     * Registro inicial para reconocimiento facial
+     */
+    async handleFacialRecognitionRegistration(): Promise<void> {
+        if (!this.facialRecognitionData) {
+            throw new Error(Translate.instant('core.login.rf.no_rf_data_registration'));
+        }
+
+        await CoreAlerts.show({ header: Translate.instant('core.login.rf.registration_title'), message: Translate.instant('core.login.rf.registration_message'), buttons: [Translate.instant('core.ok')] });
+
+        const photoFrontal = await this.capturePhoto(Translate.instant('core.login.rf.instruction_look_directly'));
+        if (!photoFrontal) {
+            throw new Error(Translate.instant('core.login.rf.capture_frontal_failed'));
+        }
+
+        const faceValidation = await this.facialRecognitionService.validateFaceInImage(photoFrontal);
+        if (!faceValidation.hasFace) {
+            await CoreAlerts.show({ header: Translate.instant('core.login.rf.face_validation_title'), message: `${faceValidation.message}\n${Translate.instant('core.login.rf.face_validation_tryagain')}`, buttons: [{ text: Translate.instant('core.login.try_again'), cssClass: 'moodle-alert-button-confirm' }] });
+            throw new Error('FACE_VALIDATION_FAILED');
+        }
+
+        const deviceInfo = this.facialRecognitionService.getDeviceInfo();
+        const agrupador = this.facialRecognitionService.generateAgrupador();
+        const fechaCaptura = new Date().toISOString().split('T')[0];
+
+        const requestFrontal = {
+            foto64: photoFrontal,
+            idUsuarioRF: parseInt(this.facialRecognitionData.userRfId),
+            idUsuario: parseInt(this.facialRecognitionData.userId),
+            password: this.facialRecognitionData.password,
+            agrupador: agrupador,
+            fechadeCaptura: fechaCaptura,
+            idApp: 1,
+            lado: 0,
+            secuencia: 1,
+            claveUsuario: this.facialRecognitionData.userKey,
+            ...deviceInfo,
+        };
+
+        await this.facialRecognitionService.addFotoRF(requestFrontal);
+
+        await CoreAlerts.show({ header: Translate.instant('core.login.rf.registration_completed'), message: Translate.instant('core.login.rf.registration_completed_message'), buttons: [Translate.instant('core.ok')] });
+
+        this.facialRecognitionData.haveRfRegister = '1';
+    }
+
+    /**
+     * Maneja el login con reconocimiento facial
+     */
+    async handleFacialRecognitionLogin(): Promise<void> {
+        if (!this.facialRecognitionData) {
+            throw new Error(Translate.instant('core.login.rf.no_rf_data_available'));
+        }
+
+        const photoDataUrl = await this.capturePhoto(Translate.instant('core.login.rf.instruction_verify_identity'));
+        if (!photoDataUrl) {
+            throw new Error(Translate.instant('core.login.rf.capture_failed'));
+        }
+
+        const faceValidation = await this.facialRecognitionService.validateFaceInImage(photoDataUrl);
+        if (!faceValidation.hasFace) {
+            await CoreAlerts.show({ header: Translate.instant('core.login.rf.face_validation_title'), message: `${faceValidation.message}\n${Translate.instant('core.login.rf.face_validation_tryagain')}`, buttons: [{ text: Translate.instant('core.login.try_again'), cssClass: 'moodle-alert-button-confirm' }] });
+            throw new Error('FACE_VALIDATION_FAILED');
+        }
+
+        const verificationResult = await this.facialRecognitionService.verifyFotoRF({ IdUsuario: parseInt(this.facialRecognitionData.userId), password: this.facialRecognitionData.password, Foto64: photoDataUrl, IdUsuarioFR: parseInt(this.facialRecognitionData.userRfId) });
+
+        if (verificationResult && verificationResult.success === true) {
+            const rfPassword = verificationResult.password;
+
+            if (rfPassword) {
+                const userEmailResponse = await this.facialRecognitionService.getUserEmail(this.username);
+                const passwordValidation = await this.facialRecognitionService.validatePasswordWithMoodle(userEmailResponse.email, rfPassword);
+
+                if (!passwordValidation.success) {
+                    this.credForm.controls['password'].setValue('');
+                await CoreAlerts.show({ header: Translate.instant('core.login.rf.identity_sync_problem'), message: Translate.instant('core.login.rf.identity_sync_message'), buttons: [Translate.instant('core.ok')] });
+
+                    return;
+                }
+            }
+
+            await CoreAlerts.show({ header: Translate.instant('core.login.rf.verification_success'), message: Translate.instant('core.login.rf.verification_success_message'), buttons: [Translate.instant('core.ok')] });
+
+            if (verificationResult.password) {
+                // Auto-login using the obtained password
+                this.credForm.controls['password'].setValue(verificationResult.password);
+                const mockEvent = new Event('submit');
+                try {
+                    await this.login(mockEvent);
+                } catch (loginError) {
+                await CoreAlerts.show({ header: Translate.instant('core.error'), message: Translate.instant('core.login.rf.login_error_auto'), buttons: [Translate.instant('core.ok')] });
+                    this.credForm.controls['password'].setValue(verificationResult.password);
+                }
+            } else {
+            await CoreAlerts.show({ header: Translate.instant('core.login.rf.manual_login_required'), message: Translate.instant('core.login.rf.manual_login_message'), buttons: [Translate.instant('core.ok')] });
+            }
+        } else {
+            await CoreAlerts.show({ header: Translate.instant('core.login.rf.face_validation_title'), message: Translate.instant('core.login.rf.face_validation_tryagain'), buttons: [{ text: Translate.instant('core.login.try_again'), cssClass: 'moodle-alert-button-confirm' }] });
+        }
+    }
+
+    /**
+     * Captura una foto usando la cámara del dispositivo
+     *
+     * @param instruction
+     */
+    async capturePhoto(instruction: string): Promise<string> {
+        try {
+            const DATA_URL = 0;
+            const CAMERA = 1;
+            const JPEG = 0;
+            const PHOTO = 0;
+            const FRONT_CAMERA = 1;
+
+            const options = {
+                quality: 90,
+                targetWidth: 300,
+                targetHeight: 300,
+                destinationType: DATA_URL,
+                sourceType: CAMERA,
+                encodingType: JPEG,
+                mediaType: PHOTO,
+                correctOrientation: true,
+                saveToPhotoAlbum: false,
+                cameraDirection: FRONT_CAMERA,
+                allowEdit: false,
+            };
+
+            return new Promise((resolve, reject) => {
+                (navigator as any).camera.getPicture(
+                    (imageData: string) => {
+                        if (imageData.startsWith('file://') || imageData.startsWith('/storage/') || imageData.startsWith('/data/')) {
+                            reject(new Error(Translate.instant('core.login.rf.capture_file_uri_error')));
+
+                            return;
+                        }
+
+                        if (!/^[A-Za-z0-9+/]/.test(imageData) || imageData.length < 100) {
+                            reject(new Error(Translate.instant('core.login.rf.face_no_detected')));
+
+                            return;
+                        }
+
+                        resolve(imageData);
+                    },
+                    (error: any) => {
+                        if (error && typeof error === 'string' && error.includes('cancelled')) {
+                            reject(new Error(Translate.instant('core.login.rf.capture_cancelled')));
+                        } else {
+                            const rawMsg = error instanceof Error ? error.message : String(error);
+                            const translated = this.facialRecognitionService.translateServerMessage(rawMsg);
+                            reject(new Error(Translate.instant('core.login.rf.error_generic', { $a: translated }))); 
+                        }
+                    },
+                    options,
+                );
+            });
+        } catch (error) {
+            const rawMsg = error instanceof Error ? error.message : String(error ?? 'Unknown');
+            const translated = this.facialRecognitionService.translateServerMessage(rawMsg);
+            throw new Error(Translate.instant('core.login.rf.error_generic', { $a: translated }));
+        }
     }
 
     /**

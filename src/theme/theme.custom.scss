@@ -12,6 +12,20 @@
 
 }
 
+/* Direct rule to ensure RF button styles apply inside ion-button's shadow DOM */
+ion-content.reconnect-page ion-button.btn-secondary-custom {
+  --background: white !important;
+  --color: #000 !important;
+  --border-color: #000 !important;
+}
+
+ion-content.reconnect-page ion-button.btn-secondary-custom:hover,
+ion-content.reconnect-page ion-button.btn-secondary-custom:focus {
+  --background: white !important;
+  --color: #000 !important;
+  --border-color: #000 !important;
+}
+
 /*
  * Dark Theme
  * -------------------------------------------

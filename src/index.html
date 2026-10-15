@@ -20,6 +20,11 @@
     <!-- add to homescreen for ios -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!-- TensorFlow.js and face-landmarks-detection (required by FacialRecognitionService) -->
+    <!-- Keeping token hardcoded as requested; these scripts enable detector initialization in WebView -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.11.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection@1.0.2/dist/face-landmarks-detection.min.js"></script>
 </head>
 
 <body>

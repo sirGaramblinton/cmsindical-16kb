@@ -1,5 +1,9 @@
 @use "theme/globals" as *;
 
+// Include page-specific styles globally to ensure they are available in WebView builds
+@import "./pages/reconnect/reconnect.scss";
+
+
 :host {
     ion-content,
     ion-list {

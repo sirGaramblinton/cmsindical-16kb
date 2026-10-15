@@ -1,0 +1,778 @@
+10-12 14:07:10.399  2099  2894 D UAH-UahAdaptHelper: adaptSetNotification identity = OplusUAwareInputHelpersrc = 1000 , type 1 ,p1 = -1 ,p2 = -1 ,p3 = -1 ,p4 =
+10-12 14:07:10.399  2099  2894 I [UAH_CLIENT]: uahRuleCtl, ruleId:1000, status:1
+10-12 14:07:10.399  2099  2605 D OplusNetlinkSocket: handleNetlinkRecvKernelMessage:nlmsghdr:StructNlMsgHdr{ nlmsg_len{2988}, nlmsg_type{54()}, nlmsg_flags{0()}, nlmsg_seq{0}, nlmsg_pid{137562669} }
+10-12 14:07:10.399  2099  2605 D OplusNetlinkSocket: handleNetlinkRecvKernelMessage:nlmsghdr:StructNlMsgHdr{ nlmsg_len{2988}, nlmsg_type{54()}, nlmsg_flags{0()}, nlmsg_seq{0}, nlmsg_pid{137562669} }
+10-12 14:07:10.399  2099  2605 D OplusNetlinkSocket: handleNetlinkRecvKernelMessage:nlmsghdr:StructNlMsgHdr{ nlmsg_len{2988}, nlmsg_type{54()}, nlmsg_flags{0()}, nlmsg_seq{0}, nlmsg_pid{137562669} }
+10-12 14:07:10.399  3017  3017 D AnimSeqTimeStamp: getTimeGapToLastStartAppTime: 543335130
+10-12 14:07:10.399  2099  2605 D OplusNetlinkSocket: handleNetlinkRecvKernelMessage:nlmsghdr:StructNlMsgHdr{ nlmsg_len{2936}, nlmsg_type{54()}, nlmsg_flags{0()}, nlmsg_seq{0}, nlmsg_pid{137562669} }
+10-12 14:07:10.399  2099  2605 D KernelStatsHelper: data over! check: true
+10-12 14:07:10.408  3017  3017 D OtherActivityInputConsumer:  onConsumerAboutToBeSwitched  Call ：com.android.quickstep.inputconsumers.OtherActivityInputConsumer.finishTouchTracking:98 com.android.quickstep.inputconsumers.OplusOtherActivityInputConsumer.finishTouchTracking:32 com.android.quickstep.inputconsumers.OtherActivityInputConsumer.onMotionEvent:590 com.android.quickstep.inputconsumers.OplusOtherActivityInputConsumer.superMotionEvent:27 com.android.quickstep.inputconsumers.OplusOtherActivityInputConsumer.access$superMotionEvent:0 com.android.quickstep.inputconsumers.OplusOtherActivityInputConsumer$1.onSwipeFailed:48 com.oplus.quickstep.gesture.helper.OplusInputInterceptHelper.interceptAndInjectMotionEvent:18 com.android.quickstep.inputconsumers.OplusOtherActivityInputConsumer.onMotionEvent:592 com.android.quickstep.inputconsumers.AssistantInputConsumer.onMotionEvent:391 com.android.quickstep.OplusBaseTouchInteractionService.onDispatchInputEvent:1459
+10-12 14:07:10.408  3017  3017 D AnimSeqTimeStamp: getTimeGapToLastRecentFinishTime: 543335139
+10-12 14:07:10.408  3017  3017 D OtherActivityInputConsumer: removeListener, mActiveCallbacks == null ? true
+10-12 14:07:10.413  3017  3017 I PantaCard.Lnch.AppCardImpl:  100&1000001&1_sid=536871100_rk=a82570,setAllowCardRefreshable refreshable:true[sdk:v1.3.70-2f5422a,seed-plugin:v16.58.0-234f76ae,app:v15.4.30]
+10-12 14:07:10.413  3017  3017 I PantaCard.Lnch.SmartEngineChecker:  100&1000001&1_sid=536871100_rk=a82570,getSmartApi...[sdk:v1.3.70-2f5422a,seed-plugin:v16.58.0-234f76ae,app:v15.4.30]
+10-12 14:07:10.413  3017  5736 I PantaCard.Lnch.SmartEngine:  100&1000001&1_sid=536871100_rk=a82570,setAllowCardRefreshable refreshable=true,view=com.oplus.smartengine.widget.RootConstraintLayout{976c71 VFE...C.. .......D 30,20-474,464 #1 alpha=1.0 viewInfo = }[sdk:v1.3.70-2f5422a,seed-plugin:v16.58.0-234f76ae,app:v15.4.30]
+10-12 14:07:10.413  3017  5736 D ViewApiDelegate: setAllowCardRefreshable ifAllowRefresh =true, view=com.oplus.smartengine.widget.RootConstraintLayout{976c71 VFE...C.. .......D 30,20-474,464 #1 alpha=1.0 viewInfo = }
+10-12 14:07:10.413  3017  5736 D ViewApiDelegate: onVisible, view=com.oplus.smartengine.widget.RootConstraintLayout{976c71 VFE...C.. .......D 30,20-474,464 #1 alpha=1.0 viewInfo = }, isThemeCard=false, ifAllowCardRefresh=true
+10-12 14:07:10.415 18422 18435 D OverviewProxyService: notifyInjectEvent
+10-12 14:07:10.419  2099  2114 I InputDispatcher: injectInputEvent: targetUid=<not set>, syncMode=NONE, timeout=30000ms, policyFlags=0x8000000, event=MotionEvent { action=DOWN, id[0]=0, x[0]=128.375, y[0]=2359.25, edgeFlags=1073741824, eventTime=543335050934000, downTime=543335049000000, deviceId=3, source=TOUCHSCREEN, displayId=0, eventId=0x22db8b2c}
+10-12 14:07:10.421  2099  2114 E InputDispatcher: Inconsistent event: MotionEvent { action=DOWN, id[0]=0, x[0]=128.375, y[0]=2359.25, edgeFlags=1073741824, eventTime=543335050934000, downTime=543335049000000, deviceId=3, source=TOUCHSCREEN, displayId=0, eventId=0x22db8b2c}, reason: Injection on 0: Invalid DOWN event - pointers already down for device DeviceId(-1): {DeviceId(-1): {1, 0}}
+10-12 14:07:10.422  2099  2114 I InputDispatcher: injectInputEvent: targetUid=<not set>, syncMode=NONE, timeout=30000ms, policyFlags=0x8000000, event=MotionEvent { action=UP, id[0]=0, x[0]=128.375, y[0]=2359.25, edgeFlags=1073741824, eventTime=543335128715000, downTime=543335049000000, deviceId=3, source=TOUCHSCREEN, displayId=0, eventId=0x2fa0f26a}
+10-12 14:07:10.423  2099  2894 I [UAH_CLIENT]: UahEventAcquire, cmdid:37, pkg:none, identity:OplusUAwareInputHelper
+10-12 14:07:10.424  2099  2894 D UAH-UahAdaptHelper: adaptSetNotification identity = OplusUAwareInputHelpersrc = 1000 , type 0 ,p1 = -1 ,p2 = -1 ,p3 = -1 ,p4 =
+10-12 14:07:10.424  2099  2894 I [UAH_CLIENT]: uahRuleCtl, ruleId:1000, status:0
+10-12 14:07:10.424  2099  2640 D OGG_Detector: D:done mCurrStatus: 0
+10-12 14:07:10.428  2099  2114 E InputDispatcher: Inconsistent event: MotionEvent { action=UP, id[0]=0, x[0]=128.375, y[0]=2359.25, edgeFlags=1073741824, eventTime=543335128715000, downTime=543335049000000, deviceId=3, source=TOUCHSCREEN, displayId=0, eventId=0x2fa0f26a}, reason: Injection on 0: Got ACTION_UP, but we have pointers: {1, 0} for device DeviceId(-1)
+10-12 14:07:10.429  3017  3017 D AnimSeqTimeStamp: getTimeGapToLastStartAppTime: 543335160
+10-12 14:07:10.430  2099  2894 D UAH-UahAdaptHelper: adaptSetNotification identity = OplusUAwareInputHelpersrc = 1000 , type 1 ,p1 = -1 ,p2 = -1 ,p3 = -1 ,p4 =
+10-12 14:07:10.430  2099  2894 I [UAH_CLIENT]: uahRuleCtl, ruleId:1000, status:1
+10-12 14:07:10.430  3017  3017 D PhonemanagerCard.ClearCardEntity: onVisible() called with: view = com.oplus.phonemanager.cardview.optimize.ClearCardView{16cf960 V.E...... .......D 0,0-444,444 #2 alpha=1.0 viewInfo = }
+10-12 14:07:10.431 18997 18997 I ImeTracker: com.oplus.securitykeyboard:8456b4d6: onRequestHide at ORIGIN_IME reason HIDE_SOFT_INPUT_BY_BACK_KEY fromUser true
+10-12 14:07:10.434 18997 18997 D ViewRootImplExtImpl: the up motion event handled by client, just return
+10-12 14:07:10.435  2099  2226 I UserAwareMgr: fg app status not changed, beforeVisible: true, currentVisible: true
+10-12 14:07:10.435 18997 18997 D StatisticsUtils: onCommon map:{board_show_count=1} key:board_show_count
+10-12 14:07:10.435 21698 21864 D EDGE_TOUCH_SERVICE: onInputtungMethodVisibilityChanged: isVisible = false
+10-12 14:07:10.436 18997 18997 D StatisticsUtils: onCommon map:{board_show_time=6925} key:board_show_time
+10-12 14:07:10.436 21698 22134 D OplusEdgeTouchRUSConfigManager: writeEdgeTouchParam command= mod para_V2 finger_hold_matched_ver_support:1;mod para_V2 edge_swipe_exit_distance:1600;mod para_V2 large_bottom_middle_support:0;mod para_V2 finger_hold_differ_size_support:1;mod para_V2 long_eliminate_point_support:1;mod para_V2 finger_hold_matched_hor_support:0;mod para_V2 large_top_exit_distance:760;mod para_V2 large_hor_long_top_height:3200;mod para_V2 large_hor_long_top_width:480;mod para_V2 edge_sliding_matched_support:1
+10-12 14:07:10.437  1368  1368 D OplusTouch: in_deviceId = 0,in_nodeFlag = 8,data = mod para_V2 finger_hold_matched_ver_support:1;mod para_V2 edge_swipe_exit_distance:1600;mod para_V2 large_bottom_middle_support:0;mod para_V2 finger_hold_differ_size_support:1;mod para_V2 long_eliminate_point_support:1;mod para_V2 finger_hold_matched_hor_support:0;mod para_V2 large_top_exit_distance:760;mod para_V2 large_hor_long_top_height:3200;mod para_V2 large_hor_long_top_width:480;mod para_V2 edge_sliding_matched_support:1,len = 431
+10-12 14:07:10.437  1368  1368 D OplusTouch: path = /proc/touchpanel/kernel_grip_handle,len = 8192
+10-12 14:07:10.437 25163 25163 D InsetsController: hide(ime(), fromIme=true)
+10-12 14:07:10.437  1368  1368 D OplusTouch: write 431 bytes
+10-12 14:07:10.439 18422 18443 D ZoomController: forAllRootTaskManagers  managerSize = 0
+10-12 14:07:10.440  2099  2323 D WindowManager: setFrameRateStart invalid typeId return!
+10-12 14:07:10.441  2099  2114 V WindowManager: Relayout Window{552cc7e u0 OplusSecurityInputMethod}: viewVisibility=0, oldvis=0, req=1080x2412, vsysui=, x=0, y=0
+10-12 14:07:10.446 18422 18422 D callGcSupression: java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Object java.lang.reflect.Method.invoke(java.lang.Object, java.lang.Object[])' on a null object reference
+10-12 14:07:10.446 16777 16777 D callGcSupression: java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Object java.lang.reflect.Method.invoke(java.lang.Object, java.lang.Object[])' on a null object reference
+10-12 14:07:10.446 16777 16777 W VRI[]   : handleResized abandoned!
+10-12 14:07:10.446 18422 18422 W VRI[StatusBar]: handleResized abandoned!
+10-12 14:07:10.446 18422 18422 W VRI[NavigationBar_displayId_0]: handleResized abandoned!
+10-12 14:07:10.446 18422 18443 D WindowManagerShell: onKeepClearAreasChanged: restricted={}, unrestricted={}
+10-12 14:07:10.446  2099  2114 V WindowStateExtImpl: notifyWindowStateChange input show
+10-12 14:07:10.446  2099  2114 D WindowManager: NFW_findFocusedWindowIfNeeded:Window{f511a1b u0 com.cmsindical.app/com.cmsindical.app.MainActivity} mCurrentFocus:Window{f511a1b u0 com.cmsindical.app/com.cmsindical.app.MainActivity}
+10-12 14:07:10.447  1368  1368 D OplusTouch: in_deviceId = 0,in_nodeFlag = 8
+10-12 14:07:10.447  1368  1368 D OplusTouch: path = /proc/touchpanel/kernel_grip_handle,len = 8192
+10-12 14:07:10.447  2099  2221 D ColorTouchNodeManagerService: isTouchNodeSupport, nodeFlag: 8, dId:0, result:1
+10-12 14:07:10.447  1368  1368 D OplusTouch: in_deviceId = 1,in_nodeFlag = 8
+10-12 14:07:10.447  1368  1368 D OplusTouch: path = /proc/touchpanel1/kernel_grip_handle,len = 8192
+10-12 14:07:10.447  1368  1368 D OplusTouch: in_deviceId = 0,in_nodeFlag = 8,data = mod para_V2 set_ime_showing:0,len = 29
+10-12 14:07:10.447  1368  1368 D OplusTouch: path = /proc/touchpanel/kernel_grip_handle,len = 8192
+10-12 14:07:10.448  1368  1368 D OplusTouch: write 29 bytes
+10-12 14:07:10.448  2099  2221 D ColorTouchNodeManagerService: isTouchNodeSupport, nodeFlag: 8, dId:1, result:-1
+10-12 14:07:10.448 18997 18997 D Security_InputService: onlyNotifyFoldState mIsExternalKeyboardConnected: false mIsFolded: false
+10-12 14:07:10.448 18997 18997 D Security_InputService: contentTopInsets: 1297 visibleTopInsets: 1297 mVisibleRect: Rect(0, 1297 - 1080, 2305)
+10-12 14:07:10.449 18997 18997 I SurfaceControl:  setExtendedRangeBrightness sc=Surface(name=OplusSecurityInputMethod)/@0xc160401,currentBufferRatio=1.0,desiredRatio=1.0
+10-12 14:07:10.455 18997 19017 D VRI[OplusSecurityInputMethod]: Received frameCommittedCallback lastAttemptedDrawFrameNum=12 didProduceBuffer=true syncBuffer=false
+10-12 14:07:10.455 18997 18997 D VRI[OplusSecurityInputMethod]: draw finished. seqId=0
+10-12 14:07:10.456  1319  1347 I hwcomposer: [HWCDisplay] (0 updateFps():4192), (type:1, mode:2) fps:10.971130,dur:1002.63,max:417.22,min:14.96
+10-12 14:07:10.459  2099  2114 D OplusWindowManagerServiceEnhance: setInsetAnimationTid: pid 25163 ,tid 25163 ,enable true ,uafEnable true
+10-12 14:07:10.463 25163 25163 I chromium: [INFO:CONSOLE:2] "12/10/2026, 2:07:10 p.m. CoreEvents: Event 'keyboard_change' triggered.", source: http://localhost/main.9243a97a7731764d.js (2)
+10-12 14:07:10.463 25163 25163 D callGcSupression: java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Object java.lang.reflect.Method.invoke(java.lang.Object, java.lang.Object[])' on a null object reference
+10-12 14:07:10.464 25163 25163 W VRI[MainActivity]: handleResized abandoned!
+10-12 14:07:10.474  1410  1410 I SurfaceFlinger: onHandleDestroyed: name=Surface(name=6640355 NavigationBar_displayId_0)/@0xd40ffb5 - animation-leashof insets_animation#105372, layerId=105372, parentId=0
+10-12 14:07:10.484  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1423.000000,,175.000000,,40.000000,0.000000,731469963190746]
+10-12 14:07:10.490  1410  1410 I BufferQueueDebug: [Surface(name=6640355 NavigationBar_displayId_0)/@0xd40ffb5 - animation-leash of insets_animation#105372](this:0xb400007ba42a09e0,id:-1,api:0,p:-1,c:1410) onDestructor()
+10-12 14:07:10.511 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:10.512 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:10.512 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:10.684  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1420.000000,,200.000000,,39.000000,0.000000,731470163318933]
+10-12 14:07:10.691  1410  1410 I BufferQueueProducer: [OplusSecurityInputMethod#105371](this:0xb400007ba40709e0,id:-1,api:0,p:-1,c:1410) queueBuffer:fps=14.93 dur=1004.99 max=688.36 min=15.96
+10-12 14:07:10.718 31307 31307 D ServiceLifeManager: release: DiagnosticProcessController sActiveService:1
+10-12 14:07:10.718 31307 31307 D ServiceLifeManager: sActiveService:0 sIsActive:false
+10-12 14:07:10.719 31307 31307 D ServiceLifeManager: final sActiveService:0 sIsActive:false
+10-12 14:07:10.732  2099  2743 W Binder  : Outgoing transactions from this process must be FLAG_ONEWAY
+10-12 14:07:10.732  2099  2743 W Binder  : java.lang.Throwable
+10-12 14:07:10.732  2099  2743 W Binder  :      at android.os.BinderProxy.transact(BinderProxy.java:633)
+10-12 14:07:10.732  2099  2743 W Binder  :      at android.content.ContentProviderProxy.insert(ContentProviderNative.java:587)
+10-12 14:07:10.732  2099  2743 W Binder  :      at android.content.ContentProviderClient.insert(ContentProviderClient.java:347)
+10-12 14:07:10.732  2099  2743 W Binder  :      at android.content.ContentProviderClient.insert(ContentProviderClient.java:336)
+10-12 14:07:10.732  2099  2743 W Binder  :      at com.oplus.util.OplusStatisticsImpl.insert(OplusStatisticsImpl.java:307)
+10-12 14:07:10.732  2099  2743 W Binder  :      at com.oplus.util.OplusStatisticsImpl.sendDataToDCS(OplusStatisticsImpl.java:287)
+10-12 14:07:10.732  2099  2743 W Binder  :      at com.oplus.util.OplusStatisticsImpl.flushInternal(OplusStatisticsImpl.java:264)
+10-12 14:07:10.732  2099  2743 W Binder  :      at com.oplus.util.OplusStatisticsImpl.lambda$setDelayFlushJobIfNeed$4(OplusStatisticsImpl.java:211)
+10-12 14:07:10.732  2099  2743 W Binder  :      at com.oplus.util.OplusStatisticsImpl.$r8$lambda$4UYTp2NCu6Rml69JNqEuK7o54SI(OplusStatisticsImpl.java:0)
+10-12 14:07:10.732  2099  2743 W Binder  :      at com.oplus.util.OplusStatisticsImpl$$ExternalSyntheticLambda5.run(D8$$SyntheticClass:0)
+10-12 14:07:10.732  2099  2743 W Binder  :      at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:520)
+10-12 14:07:10.732  2099  2743 W Binder  :      at java.util.concurrent.FutureTask.run(FutureTask.java:328)
+10-12 14:07:10.732  2099  2743 W Binder  :      at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:323)
+10-12 14:07:10.732  2099  2743 W Binder  :      at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+10-12 14:07:10.732  2099  2743 W Binder  :      at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+10-12 14:07:10.732  2099  2743 W Binder  :      at java.lang.Thread.run(Thread.java:1571)
+10-12 14:07:10.757  2099  2114 D OplusWindowManagerServiceEnhance: setInsetAnimationTid: pid 25163 ,tid 25163 ,enable false ,uafEnable true
+10-12 14:07:10.759 25163 25163 I ImeTracker: com.cmsindical.app:3336143b: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+10-12 14:07:10.761  2099  2470 I ImeTracker: com.cmsindical.app:3336143b: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 14:07:10.761 25163 25163 I ImeTracker: com.oplus.securitykeyboard:8456b4d6: onHidden
+10-12 14:07:10.769 25163 25163 I chromium: [INFO:CONSOLE:2] "12/10/2026, 2:07:10 p.m. CoreEvents: Event 'keyboard_change' triggered.", source: http://localhost/main.9243a97a7731764d.js (2)
+10-12 14:07:10.801 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:10.840  1410  1410 I BufferQueueProducer: [NavigationBar_displayId_0#21853](this:0xb400007b863e89e0,id:-1,api:0,p:-1,c:1410) queueBuffer:fps=1.30 dur=6948.28 max=6814.05 min=15.32
+10-12 14:07:10.884  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1424.000000,,175.000000,,39.000000,0.000000,731470363137472]
+10-12 14:07:10.907 18997 18997 D Security_InputService: onlyNotifyFoldState mIsExternalKeyboardConnected: false mIsFolded: false
+10-12 14:07:10.908 18997 18997 D Security_InputService: contentTopInsets: 1297 visibleTopInsets: 1297 mVisibleRect: Rect(0, 1297 - 1080, 2305)
+10-12 14:07:10.940  2099  2226 I UserAwareMgr: fg app status not changed, beforeVisible: true, currentVisible: true
+10-12 14:07:11.087  1325  1437 I OriginChannel: wise light debug, data[1].type is 65627,data[1].sensor is 91:[1417.000000,,125.000000,,39.000000,0.000000,731470563464367]
+10-12 14:07:11.251  1371  1468 D BatteryChargeControl: bcc get no support from charging protocol
+10-12 14:07:11.277 18997 18997 D HWUI    : RenderProxy::destroy: this=0xb400007b7d6a3e00, mContext=0xb400007c00ff1e80
+10-12 14:07:11.277 18997 19017 D HWUI    : SkiaOpenGLPipeline::setSurface: this=0xb400007cb5711d40, surface=NULL
+10-12 14:07:11.285  1325  1437 I OriginChannel: wise light debug, data[1].type is 65627,data[1].sensor is 91:[1428.000000,,25.000000,,40.000000,0.000000,731470763272737]
+10-12 14:07:11.287  2099  2323 V WindowManager: Relayout Window{552cc7e u0 OplusSecurityInputMethod}: viewVisibility=8, oldvis=0, req=1080x2412, vsysui=
+10-12 14:07:11.288  2099  2323 I OplusScreenSecurityMask: remove WindowsName list: Window{552cc7e u0 OplusSecurityInputMethod} list size: 0 isFromSetSecure: false , surfaceShown = false , displayId = 0
+10-12 14:07:11.288  2099  2323 I OplusScreenSecurityMask: onSecurityPageFlagChanged size: 0 , surfaceShown = false , displayId = 0
+10-12 14:07:11.288  2099  2323 I WindowManager: Window{552cc7e u0 OplusSecurityInputMethod} state from HAS_DRAWN to NO_SURFACE; reason: destroySurface
+10-12 14:07:11.289  1410  2000 D SurfaceFlinger: calculateTimeoutTime, triggerInterval = 2 sec + 34837846 nsec
+10-12 14:07:11.289  2099  2226 I UserAwareMgr: handleFgAppChanged, pkgName: com.oplus.securitykeyboard, pid: 18997, isVisible: false, fgAppType: FG2
+10-12 14:07:11.297 18422 18443 D ZoomController: forAllRootTaskManagers  managerSize = 0
+10-12 14:07:11.301 25163 25163 D callGcSupression: java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Object java.lang.reflect.Method.invoke(java.lang.Object, java.lang.Object[])' on a null object reference
+10-12 14:07:11.302 25163 25163 W VRI[MainActivity]: handleResized abandoned!
+10-12 14:07:11.303 18422 18422 D callGcSupression: java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Object java.lang.reflect.Method.invoke(java.lang.Object, java.lang.Object[])' on a null object reference
+10-12 14:07:11.303 18422 18422 W VRI[StatusBar]: handleResized abandoned!
+10-12 14:07:11.303 18422 18422 W VRI[NavigationBar_displayId_0]: handleResized abandoned!
+10-12 14:07:11.305 16777 16777 D callGcSupression: java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Object java.lang.reflect.Method.invoke(java.lang.Object, java.lang.Object[])' on a null object reference
+10-12 14:07:11.306 16777 16777 W VRI[]   : handleResized abandoned!
+10-12 14:07:11.306  2099  2323 D WindowManager: NFW_findFocusedWindowIfNeeded:Window{f511a1b u0 com.cmsindical.app/com.cmsindical.app.MainActivity} mCurrentFocus:Window{f511a1b u0 com.cmsindical.app/com.cmsindical.app.MainActivity}
+10-12 14:07:11.311 18997 18997 D BLASTBufferQueue: [VRI[OplusSecurityInputMethod]#25](f:0,a:3) destructor()
+10-12 14:07:11.312 18997 18997 D BufferQueueConsumer: [VRI[OplusSecurityInputMethod]#25(BLAST Consumer)25](id:4a3500000019,api:0,p:-1,c:18997) disconnect
+10-12 14:07:11.314  1410  1891 I SurfaceFlinger: onHandleDestroyed: name=OplusSecurityInputMethod#105371, layerId=105371, parentId=0
+10-12 14:07:11.315 18997 18997 D Security_InputService: onlyNotifyFoldState mIsExternalKeyboardConnected: false mIsFolded: false
+10-12 14:07:11.315 18997 18997 D Security_InputService: contentTopInsets: 1297 visibleTopInsets: 1297 mVisibleRect: Rect(0, 1297 - 1080, 2305)
+10-12 14:07:11.325  1371  4458 D charge_time: type=sdp,reserve_soc=3,soc=85,ui_soc=88,current=172,avg=237,not_chg_cnt=0,stable_cnt=7,fcc=4223,fcc_ratio=87,delta=34,debug=0,region=10,ttf=6669(01:51:09),ui_ttf=3174(00:52:54)
+10-12 14:07:11.330  3305  3763 D CommonApp-310-10352: transport layer data is invalid
+10-12 14:07:11.330  1410  1410 I BufferQueueDebug: [OplusSecurityInputMethod#105371](this:0xb400007ba40709e0,id:-1,api:0,p:-1,c:1410) onDestructor()
+10-12 14:07:11.485  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1423.000000,,175.000000,,39.000000,0.000000,731470963398920]
+10-12 14:07:11.634  6762 28425 I PTC.DISC.BleAdvertiser: timeoutBleAdvertisingTask client=DiscoveryClient(id=accept-senseless, pkg=com.heytap.accessory, pid=6762), taskIsSuspending=false
+10-12 14:07:11.634  6762 28425 I PTC.DISC.BleAdvertiserAdapter: ptcBleStopAdvertising client=DiscoveryClient(id=accept-senseless, pkg=com.heytap.accessory, pid=6762)
+10-12 14:07:11.638  3457  3511 I bt_shim_advertiser: [le_advertising_manager.cc:78] Unregister: in shim layer
+10-12 14:07:11.638  3457  3837 D bluetooth: [le_advertising_manager.cc:726] stop_advertising: advertiser_id: 0 is_periodic: false
+10-12 14:07:11.639  6762 28425 I PTC.DISC.BleAdvertiser: notifyBleAdvStateChanged, state=BLE_ALL_ADV_STOPPED
+10-12 14:07:11.639  6762 28425 I PTC.CONN.SenselessScheduleImpl: --Senseless Event Changed-- handleStartEvent is BLE_ALL_ADV_STOPPED
+10-12 14:07:11.640  3457  3837 I bluetooth: [le_address_manager.cc:246] unregister_client: Client unregistered
+10-12 14:07:11.644 31307 21594 D CustomLogManagerService: WorkHandler msg.what :5
+10-12 14:07:11.645  6762 28425 I SettingImpl: isSenselessConnectionToggleChecked switchValue: 1, state is true
+10-12 14:07:11.648  6762 28425 I SettingImpl: isSenselessConnectionToggleChecked switchValue: 1, state is true
+10-12 14:07:11.648  6762 28425 I PTC.APPCORE.ResourceObtaining: expGetModelId get modelId
+10-12 14:07:11.650  1314  1314 D android.hardware.bluetooth@aidl-impl: BtHostDebugInfo
+10-12 14:07:11.650  1314  1314 D [BT]    : mtk_bt_op: BT_VND_OP_SET_BTHOST
+10-12 14:07:11.654  6762 28425 I PTC.CONN.SenselessNetworkingImpl: acceptSenselessConnection, accept job is active, return
+10-12 14:07:11.655  6762 28425 I PTC.DISC.DiscCoreImpl: advertise, options=DeviceAdvOptions={plan=Plan(planType=BLE), client=DiscoveryClient(id=accept-senseless, pkg=com.heytap.accessory, pid=6762), timeoutMillis=290000}
+10-12 14:07:11.655  6762 28425 I SettingImpl: export quick device toggle value is 0
+10-12 14:07:11.655  6762 28425 I PTC.DISC.BleAdvertiser: startAdvertise client=DiscoveryClient(id=accept-senseless, pkg=com.heytap.accessory, pid=6762)
+10-12 14:07:11.655  6762 28425 I PTC.DISC.BleAdvConfig: toStartAdvertiseConfig In.
+10-12 14:07:11.656 31307 21594 D CustomLogManagerService: curTemp:299 limit:390
+10-12 14:07:11.656 31307 21594 D CustomLogManagerService: checkUploadStatus: isSceenOn=true activeNetType=1 isCharging=true isUploading:false temperatureLimit:false
+10-12 14:07:11.656 31307 21594 D CustomLogManagerService: sys.log.customer=false
+10-12 14:07:11.656 31307 21594 D CustomLogManagerService: isHaveCustomLogCollecting :false
+10-12 14:07:11.663  6762 28425 I PTC.DISC.BleAdvConfig: toStartAdvertiseConfig timeoutMillis: 290000
+10-12 14:07:11.663  6762 28425 I SettingImpl: export quick device toggle value is 0
+10-12 14:07:11.664  6762 28425 I PTC.DISC.BleAdvertiser: suspendableStartAdvertise client=DiscoveryClient(id=accept-senseless, pkg=com.heytap.accessory, pid=6762), timeoutMillis=290000, advertiseMode=BALANCED, strategy=Senseless
+10-12 14:07:11.664  6762 28425 I PTC.DISC.BleAdvertiserAdapter: ptcBleStartAdvertising client=DiscoveryClient(id=accept-senseless, pkg=com.heytap.accessory, pid=6762), senseless=true
+10-12 14:07:11.664  6762 28425 D AdvertiseSettings: setTxPowerLevel: 3
+10-12 14:07:11.664  6762 28425 I PTC.DISC.BleAdvertiserAdapter: ManufactureSpecificData=AF302B1488004C2640000000002DAB8A9A6306
+10-12 14:07:11.669  6762 28425 I PTC.DISC.BleAdvertiserAdapter: IncludeDeviceName ServiceData=F3485915E9F3084F50504F2052656E6F3130203547
+10-12 14:07:11.670  6762 28425 D AdvertiseSettings: setTxPowerLevel: 3
+10-12 14:07:11.670  6762 28425 W BluetoothAdapterExtImpl: uid is 10103
+10-12 14:07:11.671  6762 28425 D BluetoothAdapter: isLeEnabled(): ON
+10-12 14:07:11.671  6762 28425 D BluetoothLeAdvertiser: TxPower == ADVERTISE_TX_POWER_HIGH
+10-12 14:07:11.671  6762 28425 D BluetoothAdapter: isLeEnabled(): ON
+10-12 14:07:11.675  3457  3511 I bt_shim_advertiser: [le_advertising_manager.cc:150] StartAdvertisingSet: in shim layer
+10-12 14:07:11.676  3457  3511 I bt_shim_advertiser: [le_advertising_manager.cc:170] StartAdvertisingSet: create advertising set, client_id:255, reg_id:-2779
+10-12 14:07:11.677  3457  3837 I bluetooth: [le_address_manager.cc:231] register_client: Client registered
+10-12 14:07:11.684  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1415.000000,,175.000000,,39.000000,0.000000,731471163449425]
+10-12 14:07:11.688  3457  3837 I bluetooth: [le_advertising_manager.cc:1780] on_set_advertising_set_random_address_complete: update random address for advertising set 0 : xx:xx:xx:xx:96:96
+10-12 14:07:11.700  1314  1314 D android.hardware.bluetooth@aidl-impl: BtHostDebugInfo
+10-12 14:07:11.700  1314  1314 D [BT]    : mtk_bt_op: BT_VND_OP_SET_BTHOST
+10-12 14:07:11.701  6762  6762 I PTC.DISC.BleAdvertiserAdapter: ptc resume suspendableStartAdvertising client=DiscoveryClient(id=accept-senseless, pkg=com.heytap.accessory, pid=6762)
+10-12 14:07:11.702  6762 28425 I PTC.DISC.AdvertiserContainer: Advertise started, add advertising client=DiscoveryClient(id=accept-senseless, pkg=com.heytap.accessory, pid=6762)
+10-12 14:07:11.828  1410  1410 I BufferQueueProducer: [com.cmsindical.app/com.cmsindical.app.MainActivity#105333](this:0xb400007ba413a9e0,id:-1,api:0,p:-1,c:1410) queueBuffer: fps=14.76 dur=1490.31 max=522.25 min=15.60
+10-12 14:07:11.831  1319  1347 I hwcomposer: [HWCDisplay] (0 updateFps():4192), (type:1, mode:2) fps:25.451262,dur:1375.18,max:484.29,min:13.24
+10-12 14:07:11.885  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1421.000000,,175.000000,,39.000000,0.000000,731471363368680]
+10-12 14:07:12.084  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1415.000000,,125.000000,,39.000000,0.000000,731471563139592]
+10-12 14:07:12.253  1371  1468 D BatteryChargeControl: bcc get no support from charging protocol
+10-12 14:07:12.285  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1415.000000,,150.000000,,40.000000,0.000000,731471763326371]
+10-12 14:07:12.328  1371  4458 D charge_time: type=sdp,reserve_soc=3,soc=85,ui_soc=88,current=256,avg=237,not_chg_cnt=0,stable_cnt=7,fcc=4223,fcc_ratio=87,delta=35,debug=0,region=10,ttf=6668(01:51:08),ui_ttf=3173(00:52:53)
+10-12 14:07:12.354  3305  3763 D CommonApp-310-10352: transport layer data is invalid
+10-12 14:07:12.485  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1421.000000,,175.000000,,39.000000,0.000000,731471963374155]
+10-12 14:07:12.492 20516 20536 D LogUtil_LogConfig: getLogFile(): logFilePath = /data/user/0/com.huawei.health/files/com.huawei.health/com.huawei.health_PhoneService/
+10-12 14:07:12.494 20516 20536 D LogUtil_LogConfig: acquireMaxLogFileLengthContainsOffset describe: com.huawei.health:PhoneService result:10485760
+10-12 14:07:12.684  1325  1437 I OriginChannel: wise light debug, data[1].type is 65627,data[1].sensor is 91:[1416.000000,,100.000000,,40.000000,0.000000,731472163214973]
+10-12 14:07:12.833  1410  1410 I BufferQueueProducer: [com.cmsindical.app/com.cmsindical.app.MainActivity#105333](this:0xb400007ba413a9e0,id:-1,api:0,p:-1,c:1410) queueBuffer: fps=1.99 dur=1004.97 max=502.82 min=502.15
+10-12 14:07:12.836  1319  1347 I hwcomposer: [HWCDisplay] (0 updateFps():4192), (type:1, mode:2) fps:1.990537,dur:1004.75,max:502.52,min:502.24
+10-12 14:07:12.885  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1419.000000,,150.000000,,39.000000,0.000000,731472363375578]
+10-12 14:07:12.913  1679  1679 I thermal_repeater: [recvMdThermalInfo] ret=28, strLen=127,  3, 25, -50, 0, 32767, 10439
+10-12 14:07:12.946  3305  3763 D CommonApp-310-10352: DefaultState EVENT_SCENARIOS_CHANGE
+10-12 14:07:12.946  3305  3763 D CommonApp-310-10352: scene=COMMON pn=com.cmsindical.app
+10-12 14:07:12.949 26416 26438 I Finsky  : [1697] Stats for Executor: GrpcBackgroundExecutor xyd@59adc56[Running, pool size = 3, active threads = 0, queued tasks = 0, completed tasks = 3]
+10-12 14:07:13.084  1325  1437 I OriginChannel: wise light debug, data[1].type is 65627,data[1].sensor is 91:[1419.000000,,175.000000,,39.000000,0.000000,731472563297069]
+10-12 14:07:13.087  1410  3935 D SurfaceFlinger: captureDisplay from pid 1410 uid -1 display 4627039422300187648
+10-12 14:07:13.185  1371  1462 D vendor.oplus.hardware.charger-V6-service: ret_value:130, read content:,302,295,4236,4236,-256,500,2200,85,88,1,4,-1,4681,88,1,0,1,1,0,0,4425,0,12,0,12,0,0,0,299,0,1,1,0,0,61,61,61,0,0,0,0,0,0,0,0,0,0
+10-12 14:07:13.185  1371  1462 D vendor.oplus.hardware.charger-V6-service: gmtime: 2026-10-12-14-07-13
+10-12 14:07:13.186  1371  1462 D vendor.oplus.hardware.charger-V6-service: usb_online:1, ac_online:0, wireless_online:-2147483648
+10-12 14:07:13.254  1371  1468 D BatteryChargeControl: bcc get no support from charging protocol
+10-12 14:07:13.259  2099  2521 E WifiDataStall: Ignore this poll. newStats: null txLinkSpeedMbps: 468 rxLinkSpeedMbps: 780 rssi: -51 connectionCapabilities: com.android.server.wifi.WifiNative$ConnectionCapabilities@b533d5
+10-12 14:07:13.268  3439  3439 D VendorWifiService: onEvent event:9,action:1
+10-12 14:07:13.274  2099  2625 D OplusWifiPower_TriggerCenter: mComponentCallback: wifistat
+10-12 14:07:13.285  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1420.000000,,75.000000,,39.000000,0.000000,731472763513131]
+10-12 14:07:13.332  1371  4458 D charge_time: write 3172s(00:52:52) to ttf, rc=6
+10-12 14:07:13.333  1371  4458 D charge_time: type=sdp,reserve_soc=3,soc=85,ui_soc=88,current=285,avg=243,not_chg_cnt=0,stable_cnt=7,fcc=4223,fcc_ratio=87,delta=36,debug=0,region=10,ttf=6502(01:48:22),ui_ttf=3172(00:52:52)
+10-12 14:07:13.378  3305  3763 D CommonApp-310-10352: transport layer data is invalid
+10-12 14:07:13.447  3305  3763 D UlPriorityPolicyForeground: match: config has not com.cmsindical.app
+10-12 14:07:13.484  1325  1437 I OriginChannel: wise light debug, data[1].type is 65627,data[1].sensor is 91:[1424.000000,,25.000000,,40.000000,0.000000,731472963192161]
+10-12 14:07:13.587  3439  3439 D AtCmdParser: [PHONE0]< com.oplus.telephony.AtCmdParser$2@5d7adba urc ind:+ECSQ: 20,47,-334,1,1,-40,-374,4096,47,7
+10-12 14:07:13.589  3246  3246 D OplusTelephonyController: onSignalStrengthChanged: SignalStrength=SignalStrength:{mCdma=CellSignalStrengthCdma: cdmaDbm=2147483647 cdmaEcio=2147483647 evdoDbm=2147483647 evdoEcio=2147483647 evdoSnr=2147483647 level=0,mGsm=CellSignalStrengthGsm: rssi=2147483647 ber=2147483647 mTa=2147483647 mLevel=0,mWcdma=CellSignalStrengthWcdma: ss=2147483647 ber=2147483647 rscp=2147483647 ecno=2147483647 level=0,mTdscdma=CellSignalStrengthTdscdma: rssi=2147483647 ber=2147483647 rscp=2147483647 level=0,mLte=CellSignalStrengthLte: rssi=-85 rsrp=-94 rsrq=-10 rssnr=11 cqiTableIndex=2147483647 cqi=0 ta=0 level=4 parametersUseForLevel=0,mNr=CellSignalStrengthNr:{ csiRsrp = 2147483647 csiRsrq = 2147483647 csiCqiTableIndex = 2147483647 csiCqiReport = [] ssRsrp = 2147483647 ssRsrq = 2147483647 ssSinr = 2147483647 level = 0 parametersUseForLevel = 0 timingAdvance = 2147483647 },primary=CellSignalStrengthLte}
+10-12 14:07:13.590  3439  3439 D SubsysEventListenerManager-SubsysTelephonyCallback[0]: onSignalStrengthsChanged
+10-12 14:07:13.594 18422 18479 I SystemUi--Statusbar: MobileConnectionRepositoryImpl-->subId:1 isSoftSimCard:false slotId:0
+10-12 14:07:13.632  3694  3694 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.people.contactssync.service.START pkg=com.google.android.gms mCallingUid=10266 }
+10-12 14:07:13.685  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1417.000000,,200.000000,,40.000000,0.000000,731473163330362]
+10-12 14:07:13.838  1410  1410 I BufferQueueProducer: [com.cmsindical.app/com.cmsindical.app.MainActivity#105333](this:0xb400007ba413a9e0,id:-1,api:0,p:-1,c:1410) queueBuffer: fps=1.99 dur=1004.99 max=502.89 min=502.10
+10-12 14:07:13.841  1319  1347 I hwcomposer: [HWCDisplay] (0 updateFps():4192), (type:1, mode:2) fps:1.989110,dur:1005.47,max:503.52,min:501.96
+10-12 14:07:13.885  1325  1437 I OriginChannel: wise light debug, data[1].type is 65627,data[1].sensor is 91:[1425.000000,,25.000000,,39.000000,0.000000,731473363287501]
+10-12 14:07:13.929  1410  2017 D VRR [OTI]: handleIdle from 0 to 1
+10-12 14:07:13.929  1410  2017 D VRR [OTI-HW]: isStateReady 0
+10-12 14:07:13.930  1410  2017 D VRR [OTI-HW]: rate range: min {id=0, hwcId=0, resolution=1080x2412, vsyncRate=60.00 Hz, dpi=391.89x395.26, group=0, vrrConfig=N/A} cur {id=0, hwcId=0, resolution=1080x2412, vsyncRate=60.00 Hz, dpi=391.89x395.26, group=0, vrrConfig=N/A} max {id=0, hwcId=0, resolution=1080x2412, vsyncRate=60.00 Hz, dpi=391.89x395.26, group=0, vrrConfig=N/A}
+10-12 14:07:13.930  1410  2017 D VRR [OTI-HW]: keep rate.
+10-12 14:07:14.086  1325  1437 I OriginChannel: wise light debug, data[1].type is 65627,data[1].sensor is 91:[1424.000000,,175.000000,,40.000000,0.000000,731473563355790]
+10-12 14:07:14.255  1371  1468 D BatteryChargeControl: bcc get no support from charging protocol
+10-12 14:07:14.287  1325  1437 I OriginChannel: wise light debug, data[1].type is 65627,data[1].sensor is 91:[1416.000000,,175.000000,,40.000000,0.000000,731473763369958]
+10-12 14:07:14.336  1371  4458 D charge_time: type=sdp,reserve_soc=3,soc=85,ui_soc=88,current=247,avg=242,not_chg_cnt=0,stable_cnt=7,fcc=4223,fcc_ratio=87,delta=37,debug=0,region=10,ttf=6528(01:48:48),ui_ttf=3171(00:52:51)
+10-12 14:07:14.406  3305  3763 D CommonApp-310-10352: transport layer data is invalid
+10-12 14:07:14.485  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1422.000000,,175.000000,,39.000000,0.000000,731473963494626]
+10-12 14:07:14.686  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1415.000000,,175.000000,,40.000000,0.000000,731474163241031]
+10-12 14:07:14.798 18515 18515 I adbd    : adbd service requested 'shell,v2,TERM=xterm-256color:export ANDROID_LOG_TAGS=''; exec logcat'
+10-12 14:07:14.843  1410  1410 I BufferQueueProducer: [com.cmsindical.app/com.cmsindical.app.MainActivity#105333](this:0xb400007ba413a9e0,id:-1,api:0,p:-1,c:1410) queueBuffer: fps=1.99 dur=1005.47 max=503.47 min=502.00
+10-12 14:07:14.847  1319  1347 I hwcomposer: [HWCDisplay] (0 updateFps():4192), (type:1, mode:2) fps:1.989550,dur:1005.25,max:504.01,min:501.24
+10-12 14:07:14.884  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1416.000000,,175.000000,,40.000000,0.000000,731474363348728]
+10-12 14:07:15.084  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1423.000000,,150.000000,,39.000000,0.000000,731474563130252]
+10-12 14:07:15.235  2099  2640 D OGG_Detector: D:done mCurrStatus: 0
+10-12 14:07:15.236  1410  2017 D VRR [OTI]: handleIdle from 1 to 0
+10-12 14:07:15.236  1410  2017 D VRR [OTI-HW]: isStateReady 0
+10-12 14:07:15.236  1410  2017 D VRR [OTI-HW]: rate range: min {id=0, hwcId=0, resolution=1080x2412, vsyncRate=60.00 Hz, dpi=391.89x395.26, group=0, vrrConfig=N/A} cur {id=0, hwcId=0, resolution=1080x2412, vsyncRate=60.00 Hz, dpi=391.89x395.26, group=0, vrrConfig=N/A} max {id=0, hwcId=0, resolution=1080x2412, vsyncRate=60.00 Hz, dpi=391.89x395.26, group=0, vrrConfig=N/A}
+10-12 14:07:15.236  1410  2017 D VRR [OTI-HW]: keep rate.
+10-12 14:07:15.236  2099  2894 I [UAH_CLIENT]: UahEventAcquire, cmdid:37, pkg:none, identity:OplusUAwareInputHelper
+10-12 14:07:15.236  2099  2260 D PowerManagerService: userActivityNoUpdateLocked: groupId=0, eventTime=543339963, event=touch, flags=0x0, uid=1000
+10-12 14:07:15.236  1410  2000 D SurfaceFlinger: calculateTimeoutTime, triggerInterval = 2 sec + 999999693 nsec
+10-12 14:07:15.237  2099  2894 D UAH-UahAdaptHelper: adaptSetNotification identity = OplusUAwareInputHelpersrc = 1000 , type 0 ,p1 = -1 ,p2 = -1 ,p3 = -1 ,p4 =
+10-12 14:07:15.237  2099  2894 I [UAH_CLIENT]: uahRuleCtl, ruleId:1000, status:0
+10-12 14:07:15.256  1371  1468 D BatteryChargeControl: bcc get no support from charging protocol
+10-12 14:07:15.284  1325  1437 I OriginChannel: wise light debug, data[1].type is 65627,data[1].sensor is 91:[1415.000000,,200.000000,,39.000000,0.000000,731474763391958]
+10-12 14:07:15.338  1371  4458 D charge_time: type=sdp,reserve_soc=3,soc=85,ui_soc=88,current=274,avg=246,not_chg_cnt=0,stable_cnt=7,fcc=4223,fcc_ratio=87,delta=38,debug=0,region=10,ttf=6421(01:47:01),ui_ttf=3170(00:52:50)
+10-12 14:07:15.346  2099  2894 D UAH-UahAdaptHelper: adaptSetNotification identity = OplusUAwareInputHelpersrc = 1000 , type 1 ,p1 = -1 ,p2 = -1 ,p3 = -1 ,p4 =
+10-12 14:07:15.346  2099  2260 D PowerManagerService: userActivityNoUpdateLocked: groupId=0, eventTime=543340076, event=touch, flags=0x0, uid=1000
+10-12 14:07:15.346  2099  2894 I [UAH_CLIENT]: uahRuleCtl, ruleId:1000, status:1
+10-12 14:07:15.349 25163 25163 D ViewRootImplExtImpl: the up motion event handled by client, just return
+10-12 14:07:15.365  2099  2114 W FillResponseEventLogger: Shouldn't be logging AutofillFillRequestReported again for same event
+10-12 14:07:15.365  2099  2114 W SaveEventLogger: Shouldn't be logging AutofillSaveEventReported again for same event
+10-12 14:07:15.365  2099  2114 D AutofillSession: clearPendingIntentLocked
+10-12 14:07:15.365  2099  2114 W AutofillInlineSuggestionsRequestSession: Never received an InlineSuggestionsRequest from the IME for 1073741824:i65536@1793018119
+10-12 14:07:15.366  2099  2099 W AutofillSession: handleLogContextCommitted(): last response is null
+10-12 14:07:15.367  2099  2099 I ServiceConnector.Impl: unbindJobThread: connection = ServiceConnector@640(Intent { act=android.service.autofill.AutofillService cmp=com.google.android.gms/.autofill.service.AutofillService }, user: 0)[Unbinding...]service = null mBinding = false
+10-12 14:07:15.367  2099  2099 E ServiceConnector.Impl: wasBound is false, mBinding is false, add an additional call to unbindService
+10-12 14:07:15.367  2099  2099 E ServiceConnector.Impl: Failed to unbind: java.lang.IllegalArgumentException: Service not registered: ServiceConnector@640(Intent { act=android.service.autofill.AutofillService cmp=com.google.android.gms/.autofill.service.AutofillService }, user: 0)[Unbinding...]
+10-12 14:07:15.367  2099  2099 I ServiceConnector.Impl: unbindJobThread: connection = ServiceConnector@366(Intent { act=android.service.autofill.AutofillService cmp=com.android.credentialmanager/.autofill.CredentialAutofillService }, user: 0)[Unbinding...]service = null mBinding = false
+10-12 14:07:15.367  2099  2099 E ServiceConnector.Impl: wasBound is false, mBinding is false, add an additional call to unbindService
+10-12 14:07:15.368  2099  2099 E ServiceConnector.Impl: Failed to unbind: java.lang.IllegalArgumentException: Service not registered: ServiceConnector@366(Intent { act=android.service.autofill.AutofillService cmp=com.android.credentialmanager/.autofill.CredentialAutofillService }, user: 0)[Unbinding...]
+10-12 14:07:15.369  3529  3529 V InlineSuggestionRenderService: handleDestroySuggestionViews called for 0:1793018119
+10-12 14:07:15.370 25163 28468 I ImeTracker: com.cmsindical.app:a1095481: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-12 14:07:15.371  2099  2470 I ImeTracker: com.cmsindical.app:a1095481: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 14:07:15.383 25163 25163 I ImeTracker: com.cmsindical.app:6074607e: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-12 14:07:15.385  2099  2470 I ImeTracker: com.cmsindical.app:6074607e: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 14:07:15.406 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:15.406 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:15.407 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:15.407 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:15.425  3305  3763 D CommonApp-310-10352: transport layer data is invalid
+10-12 14:07:15.428 25163 25215 D SERVER  : Handling local request: http://localhost/70309.1fdff67b1c3914ec.js
+10-12 14:07:15.431 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:15.431 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:15.438  2099  2226 W UserAwareMgr: event can not be released, id: 1014, count: 3, releasePid: 2099
+10-12 14:07:15.467  1320  1320 D healthd : system healthd: battery l=88 v=4 t=29.9 h=2 st=2 c=-274 fc=4223000 cc=1 chg=u
+10-12 14:07:15.468 25163 25221 D SERVER  : Handling local request: http://localhost/74499.d993a8f25046a7fa.js
+10-12 14:07:15.484  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1416.000000,,125.000000,,40.000000,0.000000,731474963231544]
+10-12 14:07:15.510 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:15.511 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:15.685  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1308.000000,,25.000000,,44.000000,0.000000,731475163448420]
+10-12 14:07:15.693  1320  1320 D healthd : system healthd: battery l=88 v=4 t=29.9 h=2 st=2 c=-128 fc=4223000 cc=1 chg=u
+10-12 14:07:15.731  1292  1845 E TetherController: property_get sys.radio.data.modem_share_flag return 0, 1!
+10-12 14:07:15.736 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:15.736 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:15.783  1371  1371 D vendor.oplus.hardware.charger-V6-service: get_ui_charge_icon_type 0 0 0 0 0
+10-12 14:07:15.785  1371  1371 D vendor.oplus.hardware.charger-V6-service: oplus_chg_get_cpa_power 2500 charge_online 1 retention_topic 0
+10-12 14:07:15.846  1410  1410 I BufferQueueProducer: [com.cmsindical.app/com.cmsindical.app.MainActivity#105333](this:0xb400007ba413a9e0,id:-1,api:0,p:-1,c:1410) queueBuffer: fps=26.93 dur=1002.51 max=467.21 min=15.85
+10-12 14:07:15.848  1319  1347 I hwcomposer: [HWCDisplay] (0 updateFps():4192), (type:1, mode:2) fps:26.953814,dur:1001.71,max:465.54,min:13.79
+10-12 14:07:15.884  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1128.000000,,100.000000,,48.000000,0.000000,731475363627588]
+10-12 14:07:15.889 28220 28252 I emkt    : Scheduling one-off OpaEnabledBroadcastWorker now
+10-12 14:07:15.893 28220 28252 I fstm    : Validating WorkManager process
+10-12 14:07:15.895 28220 28260 I fstm    : (REDACTED) Processes: %s, %s, %s, %s
+10-12 14:07:15.898 28220 28252 D WM-Schedulers: Created SystemJobScheduler and enabled SystemJobService
+10-12 14:07:15.901 28220 28260 D WM-ForceStopRunnable: Is default app process = true
+10-12 14:07:15.902 28220 28260 D WM-ForceStopRunnable: Performing cleanup operations.
+10-12 14:07:15.923  1371  1371 D vendor.oplus.hardware.charger-V6-service: get_ui_charge_icon_type 0 0 0 0 0
+10-12 14:07:15.925  1371  1371 D vendor.oplus.hardware.charger-V6-service: oplus_chg_get_cpa_power 2500 charge_online 1 retention_topic 0
+10-12 14:07:15.938 28220 28260 D WM-SystemJobScheduler: Reconciling jobs
+10-12 14:07:15.953 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:15.953 25163 25193 E GPUAUX  : [AUX]GuiExtAuxCheckAuxPath:688: Null anb
+10-12 14:07:15.970 28220 28260 D WM-ForceStopRunnable: Found unfinished work, scheduling it.
+10-12 14:07:15.989 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 67ab2ca3-b9c6-4e91-8152-a8a2d4ba65a8 (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109127
+10-12 14:07:16.002 28220 28260 D WM-SystemJobScheduler: Scheduling work ID cdeacf43-95a5-42fd-bc93-a01ad910b641 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109766
+10-12 14:07:16.017 28220 28260 D WM-SystemJobScheduler: Scheduling work ID a699d5f8-68d3-4004-9852-86539d862361 (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109554
+10-12 14:07:16.029 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 4e77f330-67c0-477b-b321-d50ee7cbed57 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109762
+10-12 14:07:16.038 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 253852e9-555d-4b0d-9d3b-4fd134aa32e9 (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109338
+10-12 14:07:16.046 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 76f577a3-4f32-423b-b9e4-5977850cbcf8 (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109335
+10-12 14:07:16.056 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 0bc51d19-fceb-4faa-973f-0a2ed1700ad2 (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109337
+10-12 14:07:16.066 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 2714a6b0-d842-4c47-94e1-ea543daa4751 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109339
+10-12 14:07:16.078 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 45a05454-7ac8-4d3d-9051-782c7cdb2b31 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109763
+10-12 14:07:16.086  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1130.000000,,150.000000,,48.000000,0.000000,731475563166570]
+10-12 14:07:16.086 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 55db893c-c68a-411d-b739-e37ebdff3ffa (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109764
+10-12 14:07:16.095 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 037eeeeb-506e-46e6-978d-7db887c8042e (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109657
+10-12 14:07:16.103 28220 28260 D WM-SystemJobScheduler: Scheduling work ID b3d1b4dc-ee35-443c-bb52-8b70ade948a3 (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109177
+10-12 14:07:16.111 28220 28260 D WM-SystemJobScheduler: Scheduling work ID ed7565a2-1bf4-44d4-bf3b-c11215485237 (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109663
+10-12 14:07:16.123 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 8a1b35db-e7f5-42ae-ab37-07ed63ce99a6 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109767
+10-12 14:07:16.136 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 8780655e-5242-47b3-916c-0cdc9f0f8883 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109741
+10-12 14:07:16.142 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 36fec43d-8a47-45b2-9ce8-808654919951 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109716
+10-12 14:07:16.147 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 3fbd434f-d45c-48d9-af5c-dad3ff2476c7 (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109718
+10-12 14:07:16.154 28220 28260 D WM-SystemJobScheduler: Scheduling work ID f9632797-3303-44eb-a571-7cd804c5a0d8 (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109719
+10-12 14:07:16.159 28220 28260 D WM-SystemJobScheduler: Scheduling work ID f457f468-e9ac-471b-b83e-538491a1fb9c (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109720
+10-12 14:07:16.163 28220 28260 D WM-SystemJobScheduler: Scheduling work ID e2bc9c75-1034-4285-b05b-189812c4fea7 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109717
+10-12 14:07:16.167 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 50d93c7e-2f4e-4358-8068-6409d244081a (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109389
+10-12 14:07:16.173 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 190b59da-2ae7-487a-b10e-a2aefd974d49 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109739
+10-12 14:07:16.178 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 48cac3c1-4448-43b0-a83f-958f9bcad012 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109740
+10-12 14:07:16.182 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 75926121-09f9-4205-bd2a-85f778be4c0e (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109732
+10-12 14:07:16.193 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 7a269892-5911-4dbd-a253-aa71d2a141ff (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109734
+10-12 14:07:16.203 28220 28260 D WM-SystemJobScheduler: Scheduling work ID c8716f6f-dec3-4673-b53a-68e1d3b26664 (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109736
+10-12 14:07:16.213 28220 28260 D WM-SystemJobScheduler: Scheduling work ID cb3887e4-dbce-4f71-9cbf-4f388b90da87 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109742
+10-12 14:07:16.220 28220 28260 D WM-SystemJobScheduler: Scheduling work ID afb456e0-aa32-4c52-9094-7fbd6e6207bc (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109744
+10-12 14:07:16.229 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 1b5be09b-c860-450c-b5e8-089638288693 (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109745
+10-12 14:07:16.240 28220 28260 D WM-SystemJobScheduler: Scheduling work ID ca851e47-74f9-47ab-9036-1be74159a7b9 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109768
+10-12 14:07:16.248 28220 28260 D WM-GreedyScheduler: Starting tracking for 190b59da-2ae7-487a-b10e-a2aefd974d49,8780655e-5242-47b3-916c-0cdc9f0f8883,50d93c7e-2f4e-4358-8068-6409d244081a,36fec43d-8a47-45b2-9ce8-808654919951,f9632797-3303-44eb-a571-7cd804c5a0d8,3fbd434f-d45c-48d9-af5c-dad3ff2476c7,e2bc9c75-1034-4285-b05b-189812c4fea7,f457f468-e9ac-471b-b83e-538491a1fb9c,48cac3c1-4448-43b0-a83f-958f9bcad012
+10-12 14:07:16.257  1371  1468 D BatteryChargeControl: bcc get no support from charging protocol
+10-12 14:07:16.272 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 5eee9a7a-cb2d-4617-b826-4c3382fbb6d8 (com.google.apps.tiktok.contrib.work.TikTokListenableWorker), Job ID 109770
+10-12 14:07:16.279  2099  2521 E WifiDataStall: Ignore this poll. newStats: null txLinkSpeedMbps: 468 rxLinkSpeedMbps: 780 rssi: -55 connectionCapabilities: com.android.server.wifi.WifiNative$ConnectionCapabilities@b533d5
+10-12 14:07:16.284 28220 28260 D WM-GreedyScheduler: Starting work for 5eee9a7a-cb2d-4617-b826-4c3382fbb6d8
+10-12 14:07:16.285  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1131.000000,,150.000000,,48.000000,0.000000,731475763318027]
+10-12 14:07:16.285 28220 28260 D WM-GreedyScheduler: Starting tracking for 190b59da-2ae7-487a-b10e-a2aefd974d49,8780655e-5242-47b3-916c-0cdc9f0f8883,50d93c7e-2f4e-4358-8068-6409d244081a,36fec43d-8a47-45b2-9ce8-808654919951,f9632797-3303-44eb-a571-7cd804c5a0d8,3fbd434f-d45c-48d9-af5c-dad3ff2476c7,e2bc9c75-1034-4285-b05b-189812c4fea7,f457f468-e9ac-471b-b83e-538491a1fb9c,48cac3c1-4448-43b0-a83f-958f9bcad012
+10-12 14:07:16.287 28220 28220 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=5eee9a7a-cb2d-4617-b826-4c3382fbb6d8, generation=0)
+10-12 14:07:16.290  3439  3439 D VendorWifiService: onEvent event:9,action:1
+10-12 14:07:16.291  2099  2625 D OplusWifiPower_TriggerCenter: mComponentCallback: wifistat
+10-12 14:07:16.291 28220 28260 D WM-Processor: rdq: processing WorkGenerationalId(workSpecId=5eee9a7a-cb2d-4617-b826-4c3382fbb6d8, generation=0)
+10-12 14:07:16.291 28220 28260 D WM-Processor: Work WorkGenerationalId(workSpecId=5eee9a7a-cb2d-4617-b826-4c3382fbb6d8, generation=0) is already enqueued for processing
+10-12 14:07:16.302 28220 28220 D WM-WorkerWrapper: Starting work for com.google.apps.tiktok.contrib.work.TikTokListenableWorker
+10-12 14:07:16.302 28220 28260 D WM-ConstraintTracker: rhg: initial state = true
+10-12 14:07:16.303 28220 28260 D WM-BrdcstRcvrCnstrntTrc: rhg: registering receiver
+10-12 14:07:16.305 28220 28260 D WM-WorkConstraintsTrack: NetworkRequestConstraintController register shared callback
+10-12 14:07:16.311  2099  2859 D ConnectivityService: requestNetwork for uid/pid:10117/28220 activeRequest: null callbackRequest: 102035 [NetworkRequest [ REQUEST id=102036, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10117 RequestorUid: 10117 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false declaredMethods: AVAIL|LOST|NC|BLK
+10-12 14:07:16.314  2099  2528 D ConnectivityService: NetReassign [102036 : null → 310] [c 1] [a 0] [i 1]
+10-12 14:07:16.314  2099  2521 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=102036, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10117 RequestorUid: 10117 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]
+10-12 14:07:16.314  2099  2521 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=102036, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10117 RequestorUid: 10117 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]
+10-12 14:07:16.314  2099  2521 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=102036, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10117 RequestorUid: 10117 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]
+10-12 14:07:16.314  2099  2521 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=102036, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10117 RequestorUid: 10117 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]
+10-12 14:07:16.315 28220 28472 D WM-WorkConstraintsTrack: NetworkRequestConstraintController onCapabilitiesChanged callback
+10-12 14:07:16.315 28220 28472 D WM-WorkConstraintsTrack: Not dispatching constraint state yet: isBlocked=null, capabilitiesInitialized=true
+10-12 14:07:16.315 28220 28472 D WM-WorkConstraintsTrack: NetworkRequestConstraintController onBlockedStatusChanged callback false
+10-12 14:07:16.314  1410  1410 I BufferQueueProducer: [StatusBar#21862](this:0xb400007b9da399e0,id:-1,api:0,p:-1,c:1410) queueBuffer: fps=0.17 dur=6026.30 max=6026.30 min=6026.30
+10-12 14:07:16.316 28220 28265 I emkv    : Broadcasting OPA enabled
+10-12 14:07:16.318 28220 28265 I emkv    : Broadcasting OPA user enabled
+10-12 14:07:16.319 28220 28260 D WM-WorkConstraintsTrack: NetworkRequestConstraintController send initial capabilities
+10-12 14:07:16.319 28220 28260 D WM-WorkConstraintsTrack: NetworkRequestConstraintController send initial capabilities
+10-12 14:07:16.320 28220 28260 D WM-WorkConstraintsTrack: NetworkRequestConstraintController send initial capabilities
+10-12 14:07:16.320 28220 28265 D WM-WorkConstraintsTrack: NetworkRequestConstraintController send initial capabilities
+10-12 14:07:16.321 28220 28260 D WM-WorkConstraintsTrack: NetworkRequestConstraintController send initial capabilities
+10-12 14:07:16.324 28220 28265 D WM-GreedyScheduler: Constraints met: Scheduling work ID WorkGenerationalId(workSpecId=8780655e-5242-47b3-916c-0cdc9f0f8883, generation=6556)
+10-12 14:07:16.325 28220 28264 D WM-GreedyScheduler: Constraints met: Scheduling work ID WorkGenerationalId(workSpecId=50d93c7e-2f4e-4358-8068-6409d244081a, generation=70)
+10-12 14:07:16.325 28220 28264 D WM-GreedyScheduler: Constraints met: Scheduling work ID WorkGenerationalId(workSpecId=f9632797-3303-44eb-a571-7cd804c5a0d8, generation=72)
+10-12 14:07:16.325 28220 28264 D WM-GreedyScheduler: Constraints met: Scheduling work ID WorkGenerationalId(workSpecId=48cac3c1-4448-43b0-a83f-958f9bcad012, generation=6503)
+10-12 14:07:16.325 28220 28264 D WM-GreedyScheduler: Constraints met: Scheduling work ID WorkGenerationalId(workSpecId=3fbd434f-d45c-48d9-af5c-dad3ff2476c7, generation=72)
+10-12 14:07:16.325 28220 28264 D WM-GreedyScheduler: Constraints met: Scheduling work ID WorkGenerationalId(workSpecId=190b59da-2ae7-487a-b10e-a2aefd974d49, generation=11754)
+10-12 14:07:16.325 28220 28264 D WM-GreedyScheduler: Constraints met: Scheduling work ID WorkGenerationalId(workSpecId=f457f468-e9ac-471b-b83e-538491a1fb9c, generation=72)
+10-12 14:07:16.325 28220 28264 D WM-GreedyScheduler: Constraints met: Scheduling work ID WorkGenerationalId(workSpecId=36fec43d-8a47-45b2-9ce8-808654919951, generation=70)
+10-12 14:07:16.325 28220 28264 D WM-GreedyScheduler: Constraints met: Scheduling work ID WorkGenerationalId(workSpecId=e2bc9c75-1034-4285-b05b-189812c4fea7, generation=51)
+10-12 14:07:16.327 28220 28264 D WM-Processor: rdq: processing WorkGenerationalId(workSpecId=8780655e-5242-47b3-916c-0cdc9f0f8883, generation=6556)
+10-12 14:07:16.328 28220 28264 D WM-Processor: rdq: processing WorkGenerationalId(workSpecId=50d93c7e-2f4e-4358-8068-6409d244081a, generation=70)
+10-12 14:07:16.329 28220 28264 D WM-Processor: rdq: processing WorkGenerationalId(workSpecId=f9632797-3303-44eb-a571-7cd804c5a0d8, generation=72)
+10-12 14:07:16.330 28220 28264 D WM-Processor: rdq: processing WorkGenerationalId(workSpecId=48cac3c1-4448-43b0-a83f-958f9bcad012, generation=6503)
+10-12 14:07:16.330 28220 28264 D WM-Processor: rdq: processing WorkGenerationalId(workSpecId=3fbd434f-d45c-48d9-af5c-dad3ff2476c7, generation=72)
+10-12 14:07:16.331 28220 28264 D WM-Processor: rdq: processing WorkGenerationalId(workSpecId=190b59da-2ae7-487a-b10e-a2aefd974d49, generation=11754)
+10-12 14:07:16.331 28220 28264 D WM-Processor: rdq: processing WorkGenerationalId(workSpecId=f457f468-e9ac-471b-b83e-538491a1fb9c, generation=72)
+10-12 14:07:16.332 28220 28264 D WM-Processor: rdq: processing WorkGenerationalId(workSpecId=36fec43d-8a47-45b2-9ce8-808654919951, generation=70)
+10-12 14:07:16.333 28220 28264 D WM-Processor: rdq: processing WorkGenerationalId(workSpecId=e2bc9c75-1034-4285-b05b-189812c4fea7, generation=51)
+10-12 14:07:16.336 28220 28220 D WM-WorkerWrapper: Starting work for androidx.work.multiprocess.RemoteListenableDelegatingWorker
+10-12 14:07:16.337 28220 28220 D WM-ListenableWorkerImpl: Binding to com.google.android.googlequicksearchbox, com.google.android.libraries.search.integrations.tiktok.RemoteWorkerService_search
+10-12 14:07:16.341  1371  4458 D charge_time: type=sdp,reserve_soc=3,soc=85,ui_soc=88,current=128,avg=238,not_chg_cnt=0,stable_cnt=7,fcc=4223,fcc_ratio=87,delta=39,debug=0,region=10,ttf=6636(01:50:36),ui_ttf=3169(00:52:49)
+10-12 14:07:16.345 28220 28220 I WM-RemoteWorkerService: Binding to RemoteWorkerService
+10-12 14:07:16.346 28220 28220 D WM-WorkerWrapper: Starting work for androidx.work.multiprocess.RemoteListenableDelegatingWorker
+10-12 14:07:16.346 28220 28220 D WM-ListenableWorkerImpl: Binding to com.google.android.googlequicksearchbox, com.google.android.libraries.search.integrations.tiktok.RemoteWorkerService_googleapp
+10-12 14:07:16.351 28220 28220 D WM-ListenableWorkerImpl: Service connected
+10-12 14:07:16.352 25163 25163 I chromium: [INFO:CONSOLE:2] "12/10/2026, 2:07:16 p.m. CoreSitesProvider: storeTokensInSecureStorage: storing tokens for site e2430d3da4e029a3fb7d36a9012bf62f", source: http://localhost/main.9243a97a7731764d.js (2)
+10-12 14:07:16.353 28220 28220 D WM-WorkerWrapper: Starting work for com.google.apps.tiktok.contrib.work.TikTokListenableWorker
+10-12 14:07:16.355 25163 25163 I chromium: [INFO:CONSOLE:2] "ERROR Invalid action", source: http://localhost/main.9243a97a7731764d.js (2)
+10-12 14:07:16.356 25163 25163 I chromium: [INFO:CONSOLE:2] "12/10/2026, 2:07:16 p.m. CoreSitesProvider: storeTokensInSecureStorage: error storing tokens for site e2430d3da4e029a3fb7d36a9012bf62f Invalid action", source: http://localhost/main.9243a97a7731764d.js (2)
+10-12 14:07:16.357 25163 25163 I chromium: [INFO:CONSOLE:2] "12/10/2026, 2:07:16 p.m. CoreLoginHelper: treatUserTokenError called Invalid action", source: http://localhost/main.9243a97a7731764d.js (2)
+10-12 14:07:16.357 21475 21475 I WM-RemoteWorkerService: Binding to RemoteWorkerService
+10-12 14:07:16.357 25163 25163 I chromium: [INFO:CONSOLE:2] "treatUserTokenError raw error: Invalid action", source: http://localhost/main.9243a97a7731764d.js (2)
+10-12 14:07:16.360 28220 28265 D WM-ListenableWorkerImpl: Executing work request (8780655e-5242-47b3-916c-0cdc9f0f8883, com.google.apps.tiktok.contrib.work.TikTokListenableWorker)
+10-12 14:07:16.362 25163 25163 I chromium: [INFO:CONSOLE:2] "ERROR TypeError: Cannot use 'in' operator to search for 'errorcode' in Invalid action", source: http://localhost/main.9243a97a7731764d.js (2)
+10-12 14:07:16.371 28220 28252 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=5eee9a7a-cb2d-4617-b826-4c3382fbb6d8, class=com.google.apps.tiktok.contrib.work.TikTokListenableWorker, tags={ com.google.apps.tiktok.contrib.work.TikTokListenableWorker,TikTokWorker#com.google.android.libraries.search.assistant.launcher.OpaEnabledBroadcastWorker } ]
+10-12 14:07:16.408 28220 28220 I bdcp    : (REDACTED) provideMediaIntentGddConfig: mediaIntentGddDownload=%b
+10-12 14:07:16.424 28220 28220 W ccxq    : No value provided for the places model index flag.
+10-12 14:07:16.424 28220 28220 W ccxq    : No value provided for the places model index flag.
+10-12 14:07:16.424 28220 28220 I bdcp    : (REDACTED) provideMediaIntentGddConfig: mediaIntentGddDownload=%b
+10-12 14:07:16.436 28220 28220 D MddPeriodicWorker: PeriodicWorker: startWork
+10-12 14:07:16.437 28220 28220 D WM-WorkerWrapper: Starting work for androidx.work.multiprocess.RemoteListenableDelegatingWorker
+10-12 14:07:16.437 28220 28220 D WM-ListenableWorkerImpl: Binding to com.google.android.googlequicksearchbox, com.google.android.libraries.search.integrations.tiktok.RemoteWorkerService_search
+10-12 14:07:16.443  3694  3694 I NearbySharing: SharingTileService destroyed
+10-12 14:07:16.443 28220 28220 D WM-WorkerWrapper: Starting work for com.google.apps.tiktok.contrib.work.TikTokListenableWorker
+10-12 14:07:16.443 28220 28220 D MddPeriodicWorker: PeriodicWorker: startWork
+10-12 14:07:16.444 28220 28220 D WM-ListenableWorkerImpl: Service connected
+10-12 14:07:16.444 28220 28220 D WM-WorkerWrapper: Starting work for androidx.work.multiprocess.RemoteListenableDelegatingWorker
+10-12 14:07:16.446 28220 28220 D WM-ListenableWorkerImpl: Binding to com.google.android.googlequicksearchbox, com.google.android.libraries.search.integrations.tiktok.RemoteWorkerService_search
+10-12 14:07:16.449 21475 16827 D WM-ListenableWorkerImpl: Executing work request (50d93c7e-2f4e-4358-8068-6409d244081a, com.google.apps.tiktok.contrib.work.TikTokListenableWorker)
+10-12 14:07:16.451  3305  3763 D CommonApp-310-10352: commonScoreStrategy scenarios 5 mdnsScore=0
+10-12 14:07:16.451  3305  3763 D CommonApp-310-10352: notifyScoreChange appScene COMMON score 100
+10-12 14:07:16.453  3305  3763 D OplusScanQrCodeStatsService: get tencent pkg uid fail android.content.pm.PackageManager$NameNotFoundException: com.tencent.mm
+10-12 14:07:16.458 21475 21475 D MddPeriodicWorker: PeriodicWorker: startWork
+10-12 14:07:16.462 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.462 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.462 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.462 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.462 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.462 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.463 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.463 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.463 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.463 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.463 21475 28475 I euvw    : Scheduling next refresh
+10-12 14:07:16.476 21475 28477 D PhFileGroupPop: Added file groups fedass_policy_config_group
+10-12 14:07:16.477 21475 28477 D PhFileGroupPop: Added file groups smart_dictation_policy_config_group
+10-12 14:07:16.481  2099  2114 W PackageManager: package com.google.android.googlequicksearchbox uid 10117 pid 28220 call SetEnabledSetting(com.google.android.googlequicksearchbox component = com.google.android.apps.search.assistant.verticals.familyshare.FamilyShareActivity, 2, 0)
+10-12 14:07:16.481 28220 28270 W earchbox:search: Monitor::Inflate: Install failed 0x21b4970
+10-12 14:07:16.482 28220 28269 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.482 28220 28269 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.482 28220 28269 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.482 28220 28269 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.482 28220 28269 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.482 28220 28269 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.482 28220 28220 I fudi    : #sync(). Running Synclets and scheduling next sync.
+10-12 14:07:16.482 28220 28270 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.482 28220 28270 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.483 28220 28270 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.484 28220 28270 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.484 28220 28270 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.484 28220 28270 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.484  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1128.000000,,175.000000,,50.000000,0.000000,731475963127006]
+10-12 14:07:16.485 28220 28270 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.486 28220 28269 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.486 28220 28269 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.486 28220 28269 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.486 28220 28269 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.486 28220 28270 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.486 28220 28270 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.486 28220 28270 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.486 28220 28220 D WM-WorkerWrapper: Starting work for com.google.apps.tiktok.contrib.work.TikTokListenableWorker
+10-12 14:07:16.486 28220 28220 D MddPeriodicWorker: PeriodicWorker: startWork
+10-12 14:07:16.487 28220 28220 D WM-WorkerWrapper: Starting work for androidx.work.multiprocess.RemoteListenableDelegatingWorker
+10-12 14:07:16.487 28220 28220 D WM-ListenableWorkerImpl: Binding to com.google.android.googlequicksearchbox, com.google.android.libraries.search.integrations.tiktok.RemoteWorkerService_googleapp
+10-12 14:07:16.488 28220 28262 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.488 28220 28262 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.488 28220 28262 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.488 28220 28262 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.488 28220 28262 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.488 28220 28262 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.488 28220 28262 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.488 28220 28262 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.488 28220 28262 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.489 28220 28262 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.489 28220 28220 D WM-WorkerWrapper: Starting work for androidx.work.multiprocess.RemoteListenableDelegatingWorker
+10-12 14:07:16.489 28220 28220 D WM-ListenableWorkerImpl: Binding to com.google.android.googlequicksearchbox, com.google.android.libraries.search.integrations.tiktok.RemoteWorkerService_googleapp
+10-12 14:07:16.490 28220 28270 I euvw    : Scheduling next refresh
+10-12 14:07:16.490 28220 28262 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.490 28220 28270 I euvw    : Scheduling next refresh
+10-12 14:07:16.491 28220 28262 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.491 28220 28269 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.491 28220 28269 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.491 28220 28220 D WM-Processor: rdq 5eee9a7a-cb2d-4617-b826-4c3382fbb6d8 executed; reschedule = false
+10-12 14:07:16.492 28220 28220 D WM-SystemJobService: 5eee9a7a-cb2d-4617-b826-4c3382fbb6d8 executed on JobScheduler
+10-12 14:07:16.493 28220 28220 D WM-ListenableWorkerImpl: Service connected
+10-12 14:07:16.493 28220 28270 I euvw    : Scheduling next refresh
+10-12 14:07:16.493 28220 28220 D WM-ListenableWorkerImpl: Service connected
+10-12 14:07:16.493 28220 28220 D WM-ListenableWorkerImpl: Service connected
+10-12 14:07:16.493 28220 28220 D WM-ListenableWorkerImpl: Service connected
+10-12 14:07:16.493 28220 28270 I euvw    : Scheduling next refresh
+10-12 14:07:16.493 28220 28270 I euvw    : Scheduling next refresh
+10-12 14:07:16.493 28220 28270 I euvw    : Scheduling next refresh
+10-12 14:07:16.493 28220 28270 I euvw    : Scheduling next refresh
+10-12 14:07:16.494 28220 28252 D WM-ListenableWorkerImpl: Executing work request (48cac3c1-4448-43b0-a83f-958f9bcad012, com.google.apps.tiktok.contrib.work.TikTokListenableWorker)
+10-12 14:07:16.494 28220 28264 D WM-ListenableWorkerImpl: Executing work request (190b59da-2ae7-487a-b10e-a2aefd974d49, com.google.apps.tiktok.contrib.work.TikTokListenableWorker)
+10-12 14:07:16.496 28220 28269 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.496 28220 28269 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.496 21475 16827 D WM-ListenableWorkerImpl: Executing work request (36fec43d-8a47-45b2-9ce8-808654919951, com.google.apps.tiktok.contrib.work.TikTokListenableWorker)
+10-12 14:07:16.496 28220 28269 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.496 28220 28269 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.496 28220 28269 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.496 28220 28220 I fudi    : #sync(). Running Synclets and scheduling next sync.
+10-12 14:07:16.497 28220 28262 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.497 28220 28260 D WM-GreedyScheduler: Cancelling work ID 5eee9a7a-cb2d-4617-b826-4c3382fbb6d8
+10-12 14:07:16.497 21475 16827 D WM-ListenableWorkerImpl: Executing work request (e2bc9c75-1034-4285-b05b-189812c4fea7, com.google.apps.tiktok.contrib.work.TikTokListenableWorker)
+10-12 14:07:16.498 21475 21475 D MddPeriodicWorker: PeriodicWorker: startWork
+10-12 14:07:16.498 21475 21475 D MddPeriodicWorker: PeriodicWorker: startWork
+10-12 14:07:16.498 28220 28220 I fudi    : #sync(). Running Synclets and scheduling next sync.
+10-12 14:07:16.502 28220 28262 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.502 28220 28262 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.502 28220 28262 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.502 28220 28262 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.502 21475 28477 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.502 21475 28477 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.502 21475 28477 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.502 21475 28477 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.502 21475 28477 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.502 21475 28477 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.502 21475 28477 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.502 21475 28477 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.502 21475 28477 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.502 21475 28477 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.503 21475 28477 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.503 21475 28476 D PhFileGroupPop: Added file groups fedass_policy_config_group
+10-12 14:07:16.503 28220 28270 I bdcp    : MediaIntentGddModule populatorStatus evaluated: DISABLE_ALL
+10-12 14:07:16.503 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.503 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.503 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.503 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.503 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.504 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.504 28220 28262 I fguh    : MDD.MigrationProxyPopulator.refreshFileGroups
+10-12 14:07:16.504 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.504 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.504 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.504 21475 28475 E PhFileGroupPop: Failed to add file group
+10-12 14:07:16.504 21475 28475 I euvw    : Throttled; returning pending refresh
+10-12 14:07:16.504 21475 28476 D PhFileGroupPop: Added file groups smart_dictation_policy_config_group
+10-12 14:07:16.504 21475 28476 D PhFileGroupPop: Added file groups fedass_policy_config_group
+10-12 14:07:16.505 21475 28476 D PhFileGroupPop: Added file groups smart_dictation_policy_config_group
+10-12 14:07:16.506 28220 28270 I fguh    : MDD.MigrationProxyPopulator.refreshFileGroups
+10-12 14:07:16.506 28220 28270 E SingleDataFileGroupPop: Failed to add file group
+10-12 14:07:16.506 28220 28262 E SingleDataFileGroupPop: Failed to add file group
+10-12 14:07:16.508 28220 28269 I fguh    : MDD.MigrationProxyPopulator.refreshFileGroups
+10-12 14:07:16.508 28220 28269 E SingleDataFileGroupPop: Failed to add file group
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator: #scheduleLanguagePackDeletion
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator: gdlo: MEDIUM
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at fgzs.a(PG:22)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at dyra.y(PG:24)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at dyra.A(PG:1)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at dyra.h(PG:36)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at dyra.p(PG:1)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at euxe.p(PG:16)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at dzht.a(PG:13)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at fumb.a(PG:17)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at gfkg.a(PG:3)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at gfjn.run(PG:18)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at gfki.run(PG:5)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at dnjr.run(PG:5)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at dnix.run(PG:31)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at java.lang.Thread.run(Thread.java:1571)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator:        at dnkw.run(PG:63)
+10-12 14:07:16.510 28220 28270 I ZipLPPopulator: #addNewFileGroups
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator: #scheduleLanguagePackDeletion
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator: gdlo: MEDIUM
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at fgzs.a(PG:22)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at dyra.y(PG:24)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at dyra.A(PG:1)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at dyra.h(PG:81)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at dyra.p(PG:1)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at euxe.p(PG:16)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at dzht.a(PG:13)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at fumb.a(PG:17)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at gfkg.a(PG:3)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at gfjn.run(PG:18)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at gfki.run(PG:5)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at dnjr.run(PG:5)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at dnix.run(PG:31)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at java.lang.Thread.run(Thread.java:1571)
+10-12 14:07:16.510 28220 28262 I ZipLPPopulator:        at dnkw.run(PG:63)
+10-12 14:07:16.511 28220 28270 I fgzd    : #getDownloadableLanguagePacks
+10-12 14:07:16.511 28220 28262 I ZipLPPopulator: #addNewFileGroups
+10-12 14:07:16.511 28220 28262 I fgzd    : #getDownloadableLanguagePacks
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator: #scheduleLanguagePackDeletion
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator: gdlo: MEDIUM
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at fgzs.a(PG:22)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at dyra.y(PG:24)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at dyra.h(PG:49)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at dyra.p(PG:1)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at euxe.p(PG:16)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at dzht.a(PG:13)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at fumb.a(PG:17)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at gfkg.a(PG:3)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at gfjn.run(PG:18)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at gfki.run(PG:5)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at dnjr.run(PG:5)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at dnix.run(PG:31)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at java.lang.Thread.run(Thread.java:1571)
+10-12 14:07:16.510 28220 28269 I ZipLPPopulator:        at dnkw.run(PG:63)
+10-12 14:07:16.511 28220 28269 I ZipLPPopulator: #addNewFileGroups
+10-12 14:07:16.511 28220 28269 I fgzd    : #getDownloadableLanguagePacks
+10-12 14:07:16.521 28220 28262 I fhae    : (REDACTED) Loaded languagepack (LP) flag value from latest config %s: %s
+10-12 14:07:16.522 28220 28270 I fhae    : (REDACTED) Loaded languagepack (LP) flag value from latest config %s: %s
+10-12 14:07:16.522 28220 28269 I fhae    : (REDACTED) Loaded languagepack (LP) flag value from latest config %s: %s
+10-12 14:07:16.525 28220 28268 D PhFileGroupPop: Added file groups fedass_policy_config_group
+10-12 14:07:16.526 28220 28268 D PhFileGroupPop: Added file groups fedass_policy_config_group
+10-12 14:07:16.526 28220 28268 D PhFileGroupPop: Added file groups smart_dictation_policy_config_group
+10-12 14:07:16.527 28220 28268 D PhFileGroupPop: Added file groups smart_dictation_policy_config_group
+10-12 14:07:16.528 28220 28268 D PhFileGroupPop: Added file groups fedass_policy_config_group
+10-12 14:07:16.528 28220 28268 D PhFileGroupPop: Added file groups smart_dictation_policy_config_group
+10-12 14:07:16.531 28220 28274 I LPRequestState: (REDACTED) [%s] #resolveDesiredLanguagePacks
+10-12 14:07:16.531 28220 28271 I LPRequestState: (REDACTED) [%s] #resolveDesiredLanguagePacks
+10-12 14:07:16.531 28220 28473 I LPRequestState: (REDACTED) [%s] #resolveDesiredLanguagePacks
+10-12 14:07:16.533 28220 28273 I ZipLPPopulator: #addNewFileGroups complete
+10-12 14:07:16.533 28220 28273 I fgzd    : #getInstalledPackages from MDD
+10-12 14:07:16.534 28220 28271 I ZipLPPopulator: #addNewFileGroups complete
+10-12 14:07:16.534 28220 28473 I ZipLPPopulator: #addNewFileGroups complete
+10-12 14:07:16.534 28220 28271 I fgzd    : #getInstalledPackages from MDD
+10-12 14:07:16.534 28220 28473 I fgzd    : #getInstalledPackages from MDD
+10-12 14:07:16.535 28220 28271 I fgzd    : #GetLanguagePackList
+10-12 14:07:16.536 28220 28271 I fgzd    : MDD.getFileGroupsByFilter(langpack-domain_xx-XX_ver_zipfile)
+10-12 14:07:16.536 28220 28473 I fgzd    : #GetLanguagePackList
+10-12 14:07:16.536 28220 28473 I fgzd    : MDD.getFileGroupsByFilter(langpack-domain_xx-XX_ver_zipfile)
+10-12 14:07:16.542 28220 28273 I fgzd    : #GetLanguagePackList
+10-12 14:07:16.542 28220 28273 I fgzd    : MDD.getFileGroupsByFilter(langpack-domain_xx-XX_ver_zipfile)
+10-12 14:07:16.555 28220 28228 V ClearcutMetricXmitter: Transmission is done.
+10-12 14:07:16.555 28220 28229 V ClearcutMetricXmitter: Transmission is done.
+10-12 14:07:16.568 28220 28473 I LPRequestState: (REDACTED) [%s] #resolveUnusedLanguagePacks
+10-12 14:07:16.569 28220 28473 I LPRequestState: (REDACTED) [%s] #resolveDesiredLanguagePacks
+10-12 14:07:16.569 28220 28273 I LPRequestState: (REDACTED) [%s] #resolveUnusedLanguagePacks
+10-12 14:07:16.569 28220 28273 I LPRequestState: (REDACTED) [%s] #resolveDesiredLanguagePacks
+10-12 14:07:16.572 28220 28272 I LPRequestState: (REDACTED) [%s] #resolveUnusedLanguagePacks
+10-12 14:07:16.572 28220 28272 I LPRequestState: (REDACTED) [%s] #resolveDesiredLanguagePacks
+10-12 14:07:16.685  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1425.000000,,25.000000,,39.000000,0.000000,731476163772310]
+10-12 14:07:16.709 28220 28260 I fudi    : (REDACTED) Running synclets: %s
+10-12 14:07:16.710 28220 28272 I fudi    : Scheduling next wakeup
+10-12 14:07:16.710 28220 28265 I fudi    : (REDACTED) Running synclets: %s
+10-12 14:07:16.710 28220 28474 I fudi    : Scheduling next wakeup
+10-12 14:07:16.712 28220 28252 I fudi    : (REDACTED) Running synclets: %s
+10-12 14:07:16.712 28220 28271 I fudi    : Scheduling next wakeup
+10-12 14:07:16.713 28220 28272 I fueg    : Scheduling next periodic WorkManager workers
+10-12 14:07:16.713 28220 28271 I fueg    : Scheduling next periodic WorkManager workers
+10-12 14:07:16.713 28220 28474 I fueg    : Scheduling next periodic WorkManager workers
+10-12 14:07:16.725 28220 28260 D WM-SystemJobScheduler: Cancelling work ID cb3887e4-dbce-4f71-9cbf-4f388b90da87, Job ID 109742
+10-12 14:07:16.734 28220 28260 D WM-GreedyScheduler: Cancelling work ID cb3887e4-dbce-4f71-9cbf-4f388b90da87
+10-12 14:07:16.755 28220 28260 D WM-SystemJobScheduler: Scheduling work ID cb3887e4-dbce-4f71-9cbf-4f388b90da87 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109771
+10-12 14:07:16.769 28220 28260 D WM-SystemJobScheduler: Cancelling work ID cb3887e4-dbce-4f71-9cbf-4f388b90da87, Job ID 109771
+10-12 14:07:16.778 28220 28260 D WM-GreedyScheduler: Cancelling work ID cb3887e4-dbce-4f71-9cbf-4f388b90da87
+10-12 14:07:16.789 28220 28260 D WM-SystemJobScheduler: Scheduling work ID cb3887e4-dbce-4f71-9cbf-4f388b90da87 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109772
+10-12 14:07:16.796 28220 28260 D WM-SystemJobScheduler: Cancelling work ID cb3887e4-dbce-4f71-9cbf-4f388b90da87, Job ID 109772
+10-12 14:07:16.804 28220 28260 D WM-GreedyScheduler: Cancelling work ID cb3887e4-dbce-4f71-9cbf-4f388b90da87
+10-12 14:07:16.816 28220 28260 D WM-SystemJobScheduler: Scheduling work ID cb3887e4-dbce-4f71-9cbf-4f388b90da87 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109773
+10-12 14:07:16.855 28220 28271 I fueg    : Successfully scheduled next periodic workers
+10-12 14:07:16.855 28220 28474 I fueg    : Successfully scheduled next periodic workers
+10-12 14:07:16.859 28220 28265 I fudi    : #sync() complete
+10-12 14:07:16.861 28220 28252 I fudi    : #sync() complete
+10-12 14:07:16.865 28220 28272 I fueg    : Successfully scheduled next periodic workers
+10-12 14:07:16.867 28220 28264 D RemoteListenableDelegatingWorker: Cleaning up
+10-12 14:07:16.869 28220 28260 I fudi    : #sync() complete
+10-12 14:07:16.869 28220 28264 D RemoteListenableDelegatingWorker: Cleaning up
+10-12 14:07:16.873 28220 28264 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=48cac3c1-4448-43b0-a83f-958f9bcad012, class=androidx.work.multiprocess.RemoteListenableDelegatingWorker, tags={ com.google.apps.tiktok.contrib.work.TikTokListenableWorker,com.google.apps.tiktok.sync.impl.workmanager.SyncPeriodicWorker_proc<search>,sync_constraint:charger,TikTokWorker#com.google.apps.tiktok.sync.impl.workmanager.SyncPeriodicWorker } ]
+10-12 14:07:16.875 28220 28220 D WM-Processor: rdq 48cac3c1-4448-43b0-a83f-958f9bcad012 executed; reschedule = false
+10-12 14:07:16.876 28220 28220 D WM-GreedyScheduler: Stopping tracking for WorkGenerationalId(workSpecId=48cac3c1-4448-43b0-a83f-958f9bcad012, generation=6503)
+10-12 14:07:16.876 28220 28264 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=190b59da-2ae7-487a-b10e-a2aefd974d49, class=androidx.work.multiprocess.RemoteListenableDelegatingWorker, tags={ com.google.apps.tiktok.contrib.work.TikTokListenableWorker,com.google.apps.tiktok.sync.impl.workmanager.SyncPeriodicWorker_proc<search>,sync_constraint:charger_unmetered,TikTokWorker#com.google.apps.tiktok.sync.impl.workmanager.SyncPeriodicWorker } ]
+10-12 14:07:16.877 28220 28220 D WM-Processor: rdq 190b59da-2ae7-487a-b10e-a2aefd974d49 executed; reschedule = false
+10-12 14:07:16.877 28220 28220 D WM-GreedyScheduler: Stopping tracking for WorkGenerationalId(workSpecId=190b59da-2ae7-487a-b10e-a2aefd974d49, generation=11754)
+10-12 14:07:16.879 28220 28264 D WM-SystemJobScheduler: Cancelling work ID 48cac3c1-4448-43b0-a83f-958f9bcad012, Job ID 109740
+10-12 14:07:16.881 28220 28264 D WM-GreedyScheduler: Cancelling work ID 48cac3c1-4448-43b0-a83f-958f9bcad012
+10-12 14:07:16.884  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1423.000000,,25.000000,,39.000000,0.000000,731476363347940]
+10-12 14:07:16.885 28220 28264 D WM-SystemJobScheduler: Scheduling work ID 48cac3c1-4448-43b0-a83f-958f9bcad012 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109774
+10-12 14:07:16.889 28220 28264 D WM-SystemJobScheduler: Scheduling work ID 190b59da-2ae7-487a-b10e-a2aefd974d49 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109775
+10-12 14:07:16.900 28220 28264 D RemoteListenableDelegatingWorker: Cleaning up
+10-12 14:07:16.907 28220 28260 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=8780655e-5242-47b3-916c-0cdc9f0f8883, class=androidx.work.multiprocess.RemoteListenableDelegatingWorker, tags={ com.google.apps.tiktok.contrib.work.TikTokListenableWorker,com.google.apps.tiktok.sync.impl.workmanager.SyncPeriodicWorker_proc<search>,sync_constraint:charger_connected,TikTokWorker#com.google.apps.tiktok.sync.impl.workmanager.SyncPeriodicWorker } ]
+10-12 14:07:16.910 28220 28220 D WM-Processor: rdq 8780655e-5242-47b3-916c-0cdc9f0f8883 executed; reschedule = false
+10-12 14:07:16.910 28220 28220 D WM-GreedyScheduler: Stopping tracking for WorkGenerationalId(workSpecId=8780655e-5242-47b3-916c-0cdc9f0f8883, generation=6556)
+10-12 14:07:16.914 28220 28260 D WM-SystemJobScheduler: Cancelling work ID 8780655e-5242-47b3-916c-0cdc9f0f8883, Job ID 109741
+10-12 14:07:16.916 28220 28260 D WM-GreedyScheduler: Cancelling work ID 8780655e-5242-47b3-916c-0cdc9f0f8883
+10-12 14:07:16.920 28220 28260 D WM-SystemJobScheduler: Scheduling work ID 8780655e-5242-47b3-916c-0cdc9f0f8883 (androidx.work.multiprocess.RemoteListenableDelegatingWorker), Job ID 109776
+10-12 14:07:17.086  1325  1437 I OriginChannel: wise light debug, data[2].type is 65627,data[2].sensor is 91:[1417.000000,,175.000000,,40.000000,0.000000,731476563414656]
+10-12 14:07:17.258  1371  1468 D BatteryChargeControl: bcc get no support from charging protocol
+10-12 14:07:17.285  1325  1437 I OriginChannel: wise light debug, data[2].type is 65627,data[2].sensor is 91:[1414.000000,,100.000000,,39.000000,0.000000,731476763337338]
+10-12 14:07:17.345  1371  4458 D charge_time: type=sdp,reserve_soc=3,soc=85,ui_soc=88,current=11,avg=238,not_chg_cnt=1,stable_cnt=7,fcc=4223,fcc_ratio=87,delta=0,debug=0,region=10,ttf=6636(01:50:36),ui_ttf=3168(00:52:48)
+10-12 14:07:17.465 21475 26092 I euvw    : Running throttled refresh
+10-12 14:07:17.474  3305  3763 D CommonApp-310-10352: transport layer data is invalid
+10-12 14:07:17.484  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1419.000000,,200.000000,,39.000000,0.000000,731476963378694]
+10-12 14:07:17.491 28220 28272 I euvw    : Running throttled refresh
+10-12 14:07:17.491 28220 28274 I euvw    : Running throttled refresh
+10-12 14:07:17.494 28220 28272 I euvw    : Running throttled refresh
+10-12 14:07:17.494 28220 28473 I euvw    : Running throttled refresh
+10-12 14:07:17.494 28220 28473 I euvw    : Running throttled refresh
+10-12 14:07:17.495 28220 28473 I euvw    : Running throttled refresh
+10-12 14:07:17.495 28220 28473 I euvw    : Running throttled refresh
+10-12 14:07:17.498 28220 28272 I abvc    : (REDACTED) #shouldMigrate(): allowMobileLocaleSettingsDataMigration = %b,
+10-12 14:07:17.513 28220 28473 W fdtt    : No available dsp hotword properties, skip geller sync.
+10-12 14:07:17.540  3694  9982 I Auth    : [ClearToken] IntermediateToken is already deleted. [CONTEXT service_id=343 ]
+10-12 14:07:17.544 28220 28263 I datu    : (REDACTED) Using %s for getToken for 1p app: %s
+10-12 14:07:17.562 21475 28475 I datu    : (REDACTED) Using %s for getToken for 1p app: %s
+10-12 14:07:17.602 21475 26092 I dpwu    : (REDACTED) Starting batch sync for corpora: %s
+10-12 14:07:17.662 21475 21524 W dpwu    : (REDACTED) Upload permissions denied for Corpus %s
+10-12 14:07:17.668 21475 28475 I dpwu    : (REDACTED) The syncToken for corpus %s is %s and the syncRequestReason is %s
+10-12 14:07:17.684  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1410.000000,,175.000000,,39.000000,0.000000,731477163110381]
+10-12 14:07:17.690 28220 28252 D nativeloader: Load libgeller_jni_lib_split.so using class loader ns clns-7 (caller=/data/app/~~hE8tDrgPXtXaWagn3eGesg==/com.google.android.googlequicksearchbox-qiMod4iOSJhv5qs4wu7O9Q==/base.apk!classes2.dex): dlopen failed: library "libgeller_jni_lib_split.so" not found
+10-12 14:07:17.701 28220 28252 D nativeloader: Load /data/app/~~hE8tDrgPXtXaWagn3eGesg==/com.google.android.googlequicksearchbox-qiMod4iOSJhv5qs4wu7O9Q==/base.apk!/lib/arm64-v8a/libgeller_jni_lib.so using class loader ns clns-7 (caller=/data/app/~~hE8tDrgPXtXaWagn3eGesg==/com.google.android.googlequicksearchbox-qiMod4iOSJhv5qs4wu7O9Q==/base.apk!classes2.dex): ok
+10-12 14:07:17.715 28220 28473 I dpwu    : (REDACTED) Starting batch sync for corpora: %s
+10-12 14:07:17.715 28220 28273 I dpwu    : (REDACTED) Starting batch sync for corpora: %s
+10-12 14:07:17.715 28220 28474 I dpwu    : (REDACTED) Starting batch sync for corpora: %s
+10-12 14:07:17.715 28220 28272 I dpwu    : (REDACTED) Starting batch sync for corpora: %s
+10-12 14:07:17.734 28220 28264 I dqbf    : (REDACTED) Setting isLegacySQLite mode to %s.
+10-12 14:07:17.741 28220 28252 I eova    : (REDACTED) getting App Capabilities %s
+10-12 14:07:17.742 28220 28252 I eova    : (REDACTED) getting App Capabilities %s
+10-12 14:07:17.742 28220 28260 I eosh    : Building Device Properties.
+10-12 14:07:17.743 28220 28265 I eova    : (REDACTED) getting App Capabilities %s
+10-12 14:07:17.743 28220 28264 I eova    : (REDACTED) getting App Capabilities %s
+10-12 14:07:17.743 28220 28265 I eosh    : Building Device Properties.
+10-12 14:07:17.743 28220 28264 I eosh    : Building Device Properties.
+10-12 14:07:17.745 28220 28252 I eosh    : Building Device Properties.
+10-12 14:07:17.773 28220 28260 D AudioManagerExtImpl: getStreamVolume normal, volume index=40
+10-12 14:07:17.774 28220 28265 D AudioManagerExtImpl: getStreamVolume too fast, volume index=40, package=com.google.android.googlequicksearchbox
+10-12 14:07:17.777 28220 28264 D AudioManagerExtImpl: getStreamVolume too fast, volume index=40, package=com.google.android.googlequicksearchbox
+10-12 14:07:17.777 28220 28252 D AudioManagerExtImpl: getStreamVolume too fast, volume index=40, package=com.google.android.googlequicksearchbox
+10-12 14:07:17.793  4627 29925 D OplusAtlasService: getAttributeByAppName module:oplus-getStreamMaxVolume packageName:com.google.android.googlequicksearchbox
+10-12 14:07:17.793  4627 17085 D OplusAtlasService: getAttributeByAppName module:oplus-getStreamMaxVolume packageName:com.google.android.googlequicksearchbox
+10-12 14:07:17.794  4627 17085 D OplusAtlasService: getAttributeByAppName module:oplus-getStreamMaxVolume packageName:com.google.android.googlequicksearchbox
+10-12 14:07:17.795  4627  4642 D OplusAtlasService: getAttributeByAppName module:oplus-getStreamMaxVolume packageName:com.google.android.googlequicksearchbox
+10-12 14:07:17.797 28220 28264 D AudioManagerExtImpl: getStreamVolume packageName=com.google.android.googlequicksearchbox, index=16, streamType=4
+10-12 14:07:17.797 28220 28252 D AudioManagerExtImpl: getStreamVolume packageName=com.google.android.googlequicksearchbox, index=16, streamType=4
+10-12 14:07:17.798 28220 28265 D AudioManagerExtImpl: getStreamVolume packageName=com.google.android.googlequicksearchbox, index=16, streamType=4
+10-12 14:07:17.798 28220 28260 D AudioManagerExtImpl: getStreamVolume packageName=com.google.android.googlequicksearchbox, index=16, streamType=4
+10-12 14:07:17.806  1403 22716 D APM_AudioPolicyManager: listAudioPorts mAvailableInputDevices 0x80000004, 0x80000040, 0x80000080, 0x80000100
+10-12 14:07:17.807  1403 22716 D APM_AudioPolicyManager: listAudioPorts mAvailableInputDevices 0x80000004, 0x80000040, 0x80000080, 0x80000100
+10-12 14:07:17.812  4627 29925 D OplusAtlasService: checkIsInDaemonlistByUid module:judge-sco-actualy uid:10117
+10-12 14:07:17.812  4627 17085 D OplusAtlasService: checkIsInDaemonlistByUid module:judge-sco-actualy uid:10117
+10-12 14:07:17.812  4627  4642 D OplusAtlasService: checkIsInDaemonlistByUid module:judge-sco-actualy uid:10117
+10-12 14:07:17.813  4627  4641 D OplusAtlasService: checkIsInDaemonlistByUid module:judge-sco-actualy uid:10117
+10-12 14:07:17.814 28220 28260 D AudioManager: isBluetoothScoOn()=false, calling application:com.google.android.googlequicksearchbox
+10-12 14:07:17.814 28220 28265 D AudioManager: isBluetoothScoOn()=false, calling application:com.google.android.googlequicksearchbox
+10-12 14:07:17.814 28220 28264 D AudioManager: isBluetoothScoOn()=false, calling application:com.google.android.googlequicksearchbox
+10-12 14:07:17.814 28220 28252 D AudioManager: isBluetoothScoOn()=false, calling application:com.google.android.googlequicksearchbox
+10-12 14:07:17.882 28220 28263 I dpwu    : (REDACTED) The syncToken for corpus %s is %s and the syncRequestReason is %s
+10-12 14:07:17.883 28220 28515 I dpwu    : (REDACTED) The syncToken for corpus %s is %s and the syncRequestReason is %s
+10-12 14:07:17.884  1325  1437 I OriginChannel: wise light debug, data[0].type is 65627,data[0].sensor is 91:[1409.000000,,175.000000,,40.000000,0.000000,731477363332526]
+10-12 14:07:17.885 28220 28252 W gyvb    : Failed to create JWT helper. This is unexpected
+10-12 14:07:17.885 28220 28252 W gyvb    : java.lang.NoSuchMethodException: gcam.getScopes []
+10-12 14:07:17.885 28220 28252 W gyvb    :      at java.lang.Class.getMethod(Class.java:2941)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at java.lang.Class.getMethod(Class.java:2441)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at gyuz.<init>(PG:15)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at gyvb.<clinit>(PG:27)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at dpvv.a(PG:61)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at dpwu.d(PG:58)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at dpwf.a(PG:32)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at fulv.a(PG:22)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at gfhe.b(PG:8)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at gfgz.apply(PG:18)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at gfgl.c(PG:3)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at gfgn.run(PG:46)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at dnjr.run(PG:5)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at gecx.run(PG:46)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at dnjd.run(PG:81)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at java.lang.Thread.run(Thread.java:1571)
+10-12 14:07:17.885 28220 28252 W gyvb    :      at dnkw.run(PG:63)
+10-12 14:07:17.886 28220 28515 I dpwu    : (REDACTED) The syncToken for corpus %s is %s and the syncRequestReason is %s
+10-12 14:07:17.891 28220 28500 I dpwu    : (REDACTED) The syncToken for corpus %s is %s and the syncRequestReason is %s
+10-12 14:07:17.891 21475 28477 I dqbf    : (REDACTED) Writing metadata key: %s, corpus: %s
+10-12 14:07:17.893 21475 28477 I dqbf    : (REDACTED) Writing metadata key: %s, corpus: %s
+10-12 14:07:17.896 21475 21522 I dpwu    : (REDACTED) Starting batch sync for corpora: %s
+10-12 14:07:17.902 21475 28477 I dqbf    : The GellerConfig is not present, returning null.
+10-12 14:07:17.902 21475 28477 I dqbf    : (REDACTED) The GellerConfig is not present, defaulting isUploadEnabled for corpus %s to true.
+10-12 14:07:17.903 21475 28477 I dpwu    : (REDACTED) The syncToken for corpus %s is %s and the syncRequestReason is %s

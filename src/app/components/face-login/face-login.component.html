@@ -1,0 +1,20 @@
+<div class="face-login-container">
+  <ion-button expand="block" (click)="openCamera()" [disabled]="isProcessing">
+    <ion-icon name="camera" slot="start"></ion-icon>
+    Tomar foto facial
+  </ion-button>
+
+  <div *ngIf="isProcessing" class="face-login-feedback">
+    Procesando...
+  </div>
+
+  <div *ngIf="photoDataUrl" class="face-login-preview">
+    <img [src]="photoDataUrl" alt="Foto capturada" />
+    <ion-button expand="block" color="primary" (click)="processPhoto()" [disabled]="isProcessing">Analizar rostro</ion-button>
+    <ion-button expand="block" color="medium" (click)="reset()" [disabled]="isProcessing">Repetir</ion-button>
+    <div *ngIf="detectionResult && !error" class="face-login-feedback success">¡Rostro detectado correctamente!</div>
+    <div *ngIf="!detectionResult && !error && !isProcessing">No se detectó ningún rostro.</div>
+  </div>
+
+  <div *ngIf="error" class="face-login-error">{{ error }}</div>
+</div>

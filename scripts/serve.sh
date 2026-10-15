@@ -23,6 +23,10 @@ for ((i=0; i<total; ++i)); do
             ;;
         --platform=*)
             angulartarget="ionic-cordova-serve";
+            # Extract platform value and export it so builders can detect it (avoid 'undefined').
+            platform_value="${args[i]#--platform=}"
+            export IONIC_CORDOVA_PLATFORM="${platform_value}"
+            export CORDOVA_PLAT="${platform_value}"
             ;;
     esac
 done

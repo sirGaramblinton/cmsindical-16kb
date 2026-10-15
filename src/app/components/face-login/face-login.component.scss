@@ -1,0 +1,27 @@
+.face-login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.face-login-feedback {
+  margin: 1rem 0;
+  color: #666;
+}
+
+.face-login-preview {
+  margin: 1rem 0;
+  img {
+    max-width: 220px;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    margin-bottom: 1rem;
+  }
+}
+
+.face-login-error {
+  color: #e74c3c;
+  margin-top: 1rem;
+  font-weight: bold;
+}
