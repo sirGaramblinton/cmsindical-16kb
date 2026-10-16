@@ -33,3 +33,50 @@ ion-content.reconnect-page ion-button.btn-secondary-custom:focus {
 :root.dark {
 
 }
+
+/* ==== Make non-secondary buttons text color white ==== /
+/ Primary rule: set white text for any ion-button that is not a secondary button. /
+/ Exclude buttons marcadas con la clase de secondary que estés usando (ej: btn-secondary-custom o ion-color-secondary). */
+
+ion-button:not(.btn-secondary-custom):not(.button-outline):not(.button-clear):not(.btn-secondary) {
+/* texto blanco por defecto */
+--color: #ffffff;
+}
+
+/* Reforzar especificamente los variantes 'solid' (es la que viste en :host(.button-solid)). */
+ion-button.button-solid:not(.btn-secondary-custom):not(.button-outline):not(.button-clear):not(.btn-secondary) {
+--color: #ffffff;
+}
+
+/* Si usas el atributo color="secondary" (ion-button color="secondary") también excluirlos: */
+ion-button:not([color="secondary"]):not(.btn-secondary-custom) {
+--color: #ffffff;
+}
+
+/* Si algún estilo interno soprimes el cambio, usa la versión con !important en la variable (sólo si es necesario): */
+ion-button.button-solid:not(.btn-secondary-custom):not([color="secondary"]) {
+--color: #ffffff !important;
+}
+ion-button.btn-secondary-custom.md.button.button-block.button-solid.ion-activatable.ion-focusable.hydrated {
+    --background: white;
+    --border-width: 1px;
+    --border-style: solid;
+    --border-radius: 4px;
+}
+p.core-siteurl {
+    display: none;
+}
+/* Estilos misceláneos */
+ion-fab-button.md.ion-activatable.ion-focusable.hydrated {
+    --color: white;
+}
+
+ion-button.ion-text-wrap.md.button.button-block.button-outline.ion-activatable.ion-focusable.hydrated,
+ion-button.chip.ion-text-nowrap.md.button.button-small.button-outline.ion-activatable.ion-focusable.hydrated,
+ion-button.chip.ion-text-nowrap.md.button.button-outline.ion-activatable.ion-focusable.hydrated,
+ion-button.md.button.button-block.button-outline.ion-activatable.ion-focusable.hydrated {
+    --color: black;
+}
+ion-button.md.button.button-clear.button-has-icon-only.ion-activatable.ion-focusable.hydrated.in-toolbar.in-buttons:first-child {
+    display: none;
+}
