@@ -135,6 +135,7 @@
         "@angular/cli": "20.3.22",
         "@angular/compiler-cli": "20.3.18",
         "@angular/language-service": "20.3.18",
+        "@capacitor/assets": "^3.0.5",
         "@eslint/js": "9.39.4",
         "@faker-js/faker": "9.9.0",
         "@ionic/angular-toolkit": "12.3.0",
@@ -150,7 +151,6 @@
         "concurrently": "9.2.1",
         "cordova-android": "^14.0.1",
         "cordova-plugin-moodleapp": "file:cordova-plugin-moodleapp",
-        "cordova-plugin-secure-storage-echo": "^5.1.1",
         "cross-env": "10.1.0",
         "es-check": "9.6.2",
         "es6-promise-plugin": "4.2.2",
@@ -232,8 +232,7 @@
             "cordova-plugin-wkuserscript": {},
             "cordova-plugin-wkwebview-cookies": {},
             "cordova-sqlite-storage": {},
-            "nl.kingsquare.cordova.background-audio": {},
-            "cordova-plugin-secure-storage-echo": {}
+            "nl.kingsquare.cordova.background-audio": {}
         }
     }
 }

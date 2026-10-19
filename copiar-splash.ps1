@@ -3,9 +3,9 @@ param(
     [string]$OutputDir = "resources\android\splash",
     [string]$Android12Splash = "resources\splash.png",
     [double]$LogoScale = 0.34,
-    [double]$Android12LogoScale = 0.78,
-    [ValidateRange(512, 4096)]
-    [int]$Android12CanvasSize = 1024,
+    [double]$Android12LogoScale = 0.66,             # <--- Cambiado por defecto a 0.66
+    [ValidateRange(288, 4096)]                       # <--- Cambiado el mínimo de 512 a 288
+    [int]$Android12CanvasSize = 432,                 # <--- Cambiado por defecto a 432
     [string]$BackgroundColor = "#FFFFFF"
 )
 
@@ -83,20 +83,27 @@ function New-Android12Icon {
     $size = $CanvasSize
     $bitmap = New-Object System.Drawing.Bitmap($size, $size)
     $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
+
+    # Configuración extrema de nitidez para reducciones agresivas
     $graphics.CompositingQuality = [System.Drawing.Drawing2D.CompositingQuality]::HighQuality
-    $graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::HighQuality
+    $graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
     $graphics.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
     $graphics.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
     $graphics.Clear([System.Drawing.Color]::Transparent)
 
+    # Cálculo exacto basado en proporciones sin redondeos bruscos prematuros
     $maxTarget = $size * $Scale
     $ratio = $maxTarget / [Math]::Max($Source.Width, $Source.Height)
-    $drawWidth = [Math]::Max(1, [Math]::Round($Source.Width * $ratio))
-    $drawHeight = [Math]::Max(1, [Math]::Round($Source.Height * $ratio))
-    $x = [Math]::Floor(($size - $drawWidth) / 2)
-    $y = [Math]::Floor(($size - $drawHeight) / 2)
+    $drawWidth = $Source.Width * $ratio
+    $drawHeight = $Source.Height * $ratio
 
-    $graphics.DrawImage($Source, $x, $y, $drawWidth, $drawHeight)
+    # Centrado perfecto usando números flotantes (evita que el logo se desplace 1px y se deforme)
+    $x = ($size - $drawWidth) / 2
+    $y = ($size - $drawHeight) / 2
+
+    # Dibujar usando el rectángulo de alta precisión
+    $targetRect = New-Object System.Drawing.RectangleF($x, $y, $drawWidth, $drawHeight)
+    $graphics.DrawImage($Source, $targetRect)
     $graphics.Dispose()
 
     return $bitmap

@@ -38,7 +38,7 @@
     <preference name="load-url-timeout" value="60000" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="0" />
-    <preference name="FadeSplashScreen" value="false" />
+    <preference name="FadeSplashScreen" value="true" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="android-minSdkVersion" value="24" />
     <preference name="android-targetSdkVersion" value="36" />
@@ -63,11 +63,11 @@
     </feature>
     <platform name="android">
         <icon src="resources/android/icon.png" />
-        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/android/android-splash.xml" />
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" />
         <preference name="AndroidWindowSplashScreenBackground" value="#FFFFFF" />
         <preference name="AndroidWindowSplashScreenIconBackgroundColor" value="#FFFFFF" />
         <preference name="AndroidWindowSplashScreenAnimationDuration" value="200" />
-        <preference name="SplashScreenDelay" value="0" />
+        <preference name="SplashScreenDelay" value="3000" />
         <preference name="AutoHideSplashScreen" value="true" />
         <resource-file src="google-services.json" target="app/google-services.json" />
         <resource-file src="resources/android/icon/drawable-ldpi-smallicon.png" target="app/src/main/res/mipmap-ldpi/smallicon.png" />
