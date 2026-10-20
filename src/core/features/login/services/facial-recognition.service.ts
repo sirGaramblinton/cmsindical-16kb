@@ -33,7 +33,7 @@ function mapMessageToKey(rawMessage: string | undefined): string | undefined {
     if (m.includes('no se detect') || m.includes('no se detectó') || m.includes('no se detecto') || m.includes('no face') || m.includes('no face detected')) {
         return 'core.login.rf.face_no_detected';
     }
-    if (m.includes('registrado correctamente') || m.includes('registered') || m.includes('registration completed')) {
+    if (m.includes('registrado correctamente') || m.includes('creado correctamente') || m.includes('registered') || m.includes('registration completed')) {
         return 'core.login.rf.registration_completed_message';
     }
     if (m.includes('usuario no encontrado') || m.includes('user not found') || m.includes('usuario no encontrado con') || m.includes('user not found with')) {
@@ -179,21 +179,21 @@ export class FacialRecognitionService {
             switch (variant) {
                 case RfVariant.Employee: {
                     // employee variant: { success, message, errors }
-                    const message = raw.message ?? raw.msg ?? '';
+                    const message = raw?.message ?? raw?.msg ?? '';
                     const key = mapMessageToKey(message);
-                    return { success: !!raw.success, code: raw.code ?? status, message, messageKey: key, password: raw.data?.password ?? null, raw };
+                    return { success: !!raw?.success, code: raw?.code ?? status, message, messageKey: key, password: raw?.data?.password ?? null, raw };
                 }
                 case RfVariant.Empleados: {
                     // empleados variant: { message, status (true/false), code, error }
-                    const message = raw.message ?? '';
+                    const message = raw?.message ?? '';
                     const key = mapMessageToKey(message);
-                    return { success: !!raw.status || raw.status === true, code: raw.code ?? status, message, messageKey: key, password: raw.data?.password ?? null, raw };
+                    return { success: !!raw?.status, code: raw?.code ?? status, message, messageKey: key, password: raw?.data?.password ?? null, raw };
                 }
                 case RfVariant.SecurityV2:
                 default: {
                     const actual = raw?.Result || raw;
                     const code = Number(actual?.code ?? raw?.code ?? status ?? 0);
-                    const success = code === 200 || raw?.success === true || (actual && (code === 200 || actual.success === true));
+                    const success = (code >= 200 && code < 300) || raw?.success === true || actual?.success === true;
                     const message = actual?.message ?? raw?.message ?? '';
                     const key = mapMessageToKey(message);
                     return { success, code, message, messageKey: key, password: actual?.data ?? null, raw };
