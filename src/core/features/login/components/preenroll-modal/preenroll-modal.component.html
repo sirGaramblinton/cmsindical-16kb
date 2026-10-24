@@ -35,6 +35,16 @@
         <ion-label position="floating" style="z-index:2; background: #fff; padding-right: 8px;">RFC</ion-label>
         <ion-input [(ngModel)]="rfc" name="rfc" required maxlength="13" minlength="13" style="z-index:1;" />
       </ion-item>
+      <ion-item>
+        <ion-label position="floating" style="z-index:2; background: #fff; padding-right: 8px;">Correo (opcional)</ion-label>
+        <ion-input [(ngModel)]="correo" name="correo" type="email" inputmode="email" autocomplete="email" maxlength="100"
+          style="z-index:1;" />
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" style="z-index:2; background: #fff; padding-right: 8px;">Teléfono (opcional)</ion-label>
+        <ion-input [ngModel]="telefono" (ionInput)="onTelefonoInput($event)" name="telefono" type="tel" inputmode="numeric"
+          autocomplete="tel" maxlength="10" style="z-index:1;" />
+      </ion-item>
       @if (validationMsg) {
         <div class="validation-msg">{{ validationMsg }}</div>
       }

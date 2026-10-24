@@ -81,6 +81,8 @@ export class PreenrollModalComponent implements OnInit {
         this.nombres = '';
         this.apellidos = '';
         this.rfc = '';
+        this.correo = '';
+        this.telefono = '';
         this.validationMsg = '';
         this.responseMsg = '';
         this.isSubmitting = false;
@@ -97,6 +99,8 @@ export class PreenrollModalComponent implements OnInit {
         this.nombres = '';
         this.apellidos = '';
         this.rfc = '';
+        this.correo = '';
+        this.telefono = '';
         this.validationMsg = '';
         this.responseMsg = '';
         this.isSubmitting = false;
@@ -119,6 +123,8 @@ export class PreenrollModalComponent implements OnInit {
     nombres = '';
     apellidos = '';
     rfc = '';
+    correo = '';
+    telefono = '';
     validationMsg = '';
     responseMsg = '';
     isSubmitting = false;
@@ -136,13 +142,25 @@ export class PreenrollModalComponent implements OnInit {
         this.modalController.dismiss();
     }
 
+    /**
+     * Mantiene el teléfono solo con dígitos (sin paréntesis, guiones ni espacios), máximo 10.
+     *
+     * @param event Evento ionInput del campo teléfono.
+     */
+    onTelefonoInput(event: Event): void {
+        const input = event.target as HTMLIonInputElement;
+        const digits = String(input.value ?? '').replace(/\D/g, '').slice(0, 10);
+        input.value = digits;
+        this.telefono = digits;
+    }
+
     validateFields(): boolean {
         if (
             !this.nombres.trim() ||
             !this.apellidos.trim() ||
             !this.rfc.trim()
         ) {
-            this.validationMsg = 'Todos los campos son obligatorios.';
+            this.validationMsg = 'Nombres, Apellidos y RFC son obligatorios.';
 
             return false;
         }
@@ -160,6 +178,18 @@ export class PreenrollModalComponent implements OnInit {
         }
         if (this.rfc.length !== 13) {
             this.validationMsg = 'El RFC debe tener exactamente 13 caracteres.';
+
+            return false;
+        }
+        // Correo y teléfono son opcionales; solo se validan si se capturan.
+        const correo = this.correo.trim();
+        if (correo && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
+            this.validationMsg = 'Ingresa un correo electrónico válido.';
+
+            return false;
+        }
+        if (this.telefono && !/^\d{10}$/.test(this.telefono)) {
+            this.validationMsg = 'El teléfono debe tener exactamente 10 dígitos.';
 
             return false;
         }
@@ -186,7 +216,11 @@ export class PreenrollModalComponent implements OnInit {
         }
         const validateUrl = `${baseUrl}/local/preenroll/validate.php`;
         this.http
-            .post<PreenrollValidateResponse>(validateUrl, { rfc: this.rfc })
+            .post<PreenrollValidateResponse>(validateUrl, {
+                rfc: this.rfc,
+                correo: this.correo.trim(),
+                telefono: this.telefono,
+            })
             .subscribe({
                 next: (resp) => {
                     if (resp.status === 'ok') {
