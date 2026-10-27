@@ -33,22 +33,33 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating" style="z-index:2; background: #fff; padding-right: 8px;">RFC</ion-label>
-        <ion-input [(ngModel)]="rfc" name="rfc" required maxlength="13" minlength="13" style="z-index:1;" />
+        <ion-input [ngModel]="rfc" (ionInput)="onRfcInput($event)" (ionBlur)="onRfcBlur()" name="rfc" required
+          maxlength="13" autocapitalize="characters" style="z-index:1;" />
       </ion-item>
-      <ion-item>
-        <ion-label position="floating" style="z-index:2; background: #fff; padding-right: 8px;">Correo (opcional)</ion-label>
-        <ion-input [(ngModel)]="correo" name="correo" type="email" inputmode="email" autocomplete="email" maxlength="100"
-          style="z-index:1;" />
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating" style="z-index:2; background: #fff; padding-right: 8px;">Teléfono (opcional)</ion-label>
-        <ion-input [ngModel]="telefono" (ionInput)="onTelefonoInput($event)" name="telefono" type="tel" inputmode="numeric"
-          autocomplete="tel" maxlength="10" style="z-index:1;" />
-      </ion-item>
+      @if (rfcState === 'checking') {
+        <div class="rfc-status">
+          <ion-spinner name="crescent" />
+          <span>Validando RFC...</span>
+        </div>
+      } @else if (rfcMsg) {
+        <div class="validation-msg rfc-status">{{ rfcMsg }}</div>
+      }
+      @if (requireContact) {
+        <ion-item>
+          <ion-label position="floating" style="z-index:2; background: #fff; padding-right: 8px;">Correo</ion-label>
+          <ion-input [(ngModel)]="correo" name="correo" type="email" inputmode="email" autocomplete="email" required
+            maxlength="100" style="z-index:1;" />
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" style="z-index:2; background: #fff; padding-right: 8px;">Teléfono</ion-label>
+          <ion-input [ngModel]="telefono" (ionInput)="onTelefonoInput($event)" name="telefono" type="tel"
+            inputmode="numeric" autocomplete="tel" required maxlength="10" style="z-index:1;" />
+        </ion-item>
+      }
       @if (validationMsg) {
         <div class="validation-msg">{{ validationMsg }}</div>
       }
-      <ion-button expand="block" type="submit" [disabled]="isSubmitting" class="btn-primary-custom">Enviar</ion-button>
+      <ion-button expand="block" type="submit" [disabled]="!canSubmit" class="btn-primary-custom">Enviar pre-registro</ion-button>
     </form>
   }
   @if (modalState === 'processing') {

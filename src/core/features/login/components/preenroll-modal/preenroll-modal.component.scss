@@ -48,6 +48,21 @@ ion-input {
   text-align: center;
 }
 
+// Estado de la validación del RFC, justo bajo el campo
+.rfc-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: -8px 0 16px 0;
+  font-size: 0.9em;
+
+  ion-spinner {
+    width: 18px;
+    height: 18px;
+  }
+}
+
 .response-msg {
   color: #222;
   font-size: 1.1em;
